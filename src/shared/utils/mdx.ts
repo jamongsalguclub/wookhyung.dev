@@ -13,10 +13,12 @@ export interface PostMetadata {
   content?: string;
 }
 
+// 서버에서만 실행되는 함수들
 export const getAllPosts = createServerFn({
   method: 'GET',
 }).handler(async (): Promise<PostMetadata[]> => {
-  const contentDir = path.join(process.cwd(), 'content');
+  // public/content 폴더로 경로 변경
+  const contentDir = path.join(process.cwd(), 'public', 'content');
 
   try {
     const files = await fs.promises.readdir(contentDir);
@@ -40,6 +42,7 @@ export const getAllPosts = createServerFn({
       });
     }
 
+    // 날짜 기준으로 내림차순 정렬
     return posts.sort(
       (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
     );
@@ -59,7 +62,7 @@ export const getPostBySlug = createServerFn({
     return slug;
   })
   .handler(async ({ data: slug }): Promise<PostMetadata | null> => {
-    const contentDir = path.join(process.cwd(), 'content');
+    const contentDir = path.join(process.cwd(), 'public', 'content');
     const filePath = path.join(contentDir, `${slug}.mdx`);
 
     try {
@@ -89,7 +92,7 @@ export const getPostContent = createServerFn({
     return slug;
   })
   .handler(async ({ data: slug }): Promise<string | null> => {
-    const contentDir = path.join(process.cwd(), 'content');
+    const contentDir = path.join(process.cwd(), 'public', 'content');
     const filePath = path.join(contentDir, `${slug}.mdx`);
 
     try {
