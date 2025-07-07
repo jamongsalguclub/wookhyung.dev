@@ -3,11 +3,7 @@ import '@unocss/reset/sanitize/sanitize.css';
 import '@unocss/reset/sanitize/assets.css';
 import 'virtual:uno.css';
 
-import {
-  createRootRoute,
-  HeadContent,
-  Scripts,
-} from '@tanstack/react-router';
+import { createRootRoute, HeadContent, Scripts } from '@tanstack/react-router';
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools';
 import * as React from 'react';
 
