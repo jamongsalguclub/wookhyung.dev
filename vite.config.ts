@@ -1,7 +1,8 @@
 import { tanstackStart } from '@tanstack/react-start/plugin/vite';
+import UnoCSS from 'unocss/vite';
 import { defineConfig } from 'vite';
 import tsConfigPaths from 'vite-tsconfig-paths';
-import UnoCSS from 'unocss/vite';
+
 export default defineConfig({
   server: {
     port: 3000,
@@ -11,7 +12,17 @@ export default defineConfig({
       projects: ['./tsconfig.json'],
     }),
     UnoCSS(),
-
-    tanstackStart(),
+    tanstackStart({
+      target: 'static',
+      pages: [
+        {
+          path: '/',
+          prerender: {
+            crawlLinks: true,
+            enabled: true,
+          },
+        },
+      ],
+    }),
   ],
 });
