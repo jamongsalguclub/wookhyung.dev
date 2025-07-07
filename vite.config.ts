@@ -13,16 +13,7 @@ export default defineConfig({
     }),
     UnoCSS(),
     tanstackStart({
-      target: 'static',
-      pages: [
-        {
-          path: '/',
-          prerender: {
-            crawlLinks: true,
-            enabled: true,
-          },
-        },
-      ],
+      target: 'github-pages',
     }),
   ],
 });
