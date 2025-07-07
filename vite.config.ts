@@ -14,6 +14,22 @@ export default defineConfig({
     UnoCSS(),
     tanstackStart({
       target: 'github-pages',
+      pages: [
+        {
+          path: '/',
+          prerender: {
+            crawlLinks: true,
+            enabled: true,
+          },
+        },
+        {
+          path: '/posts',
+          prerender: {
+            crawlLinks: true,
+            enabled: true,
+          },
+        },
+      ],
     }),
   ],
 });
