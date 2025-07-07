@@ -1,5 +1,5 @@
-import unocss from '@unocss/eslint-config/flat';
 import js from '@eslint/js';
+import unocss from '@unocss/eslint-config/flat';
 import { defineConfig } from 'eslint/config';
 import eslintConfigPrettier from 'eslint-config-prettier';
 import pluginReact from 'eslint-plugin-react';

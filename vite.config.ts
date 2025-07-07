@@ -1,3 +1,4 @@
+import mdx from '@mdx-js/rollup';
 import { tanstackStart } from '@tanstack/react-start/plugin/vite';
 import UnoCSS from 'unocss/vite';
 import { defineConfig } from 'vite';
@@ -7,29 +8,19 @@ export default defineConfig({
   server: {
     port: 3000,
   },
+
   plugins: [
     tsConfigPaths({
       projects: ['./tsconfig.json'],
     }),
     UnoCSS(),
+    mdx({
+      // MDX options
+      remarkPlugins: [],
+      rehypePlugins: [],
+    }),
     tanstackStart({
-      target: 'github-pages',
-      pages: [
-        {
-          path: '/',
-          prerender: {
-            crawlLinks: true,
-            enabled: true,
-          },
-        },
-        {
-          path: '/posts',
-          prerender: {
-            crawlLinks: true,
-            enabled: true,
-          },
-        },
-      ],
+      target: 'netlify',
     }),
   ],
 });

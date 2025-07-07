@@ -3,15 +3,22 @@ import '@unocss/reset/sanitize/sanitize.css';
 import '@unocss/reset/sanitize/assets.css';
 import 'virtual:uno.css';
 
-import { createRootRoute, HeadContent, Scripts } from '@tanstack/react-router';
+import type { QueryClient } from '@tanstack/react-query';
+import {
+  createRootRouteWithContext,
+  HeadContent,
+  Scripts,
+} from '@tanstack/react-router';
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools';
-import * as React from 'react';
+import type * as React from 'react';
 
 import { DefaultCatchBoundary } from '~/shared/ui/DefaultCatchBoundary';
 import { NotFound } from '~/shared/ui/NotFound';
 import { seo } from '~/shared/utils/seo';
 
-export const Route = createRootRoute({
+export const Route = createRootRouteWithContext<{
+  queryClient: QueryClient;
+}>()({
   head: () => ({
     meta: [
       {
