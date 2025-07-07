@@ -1,0 +1,6 @@
+---
+alwaysApply: true
+---
+
+- 조건부 CSS는 ~/shared/lib/tailwind-merge에 있는 cn 함수를 사용한다.
+- lucide-react에 있는 아이콘을 import 할 때는 뒤에 Icon 이 붙은 아이콘을 import 한다.
