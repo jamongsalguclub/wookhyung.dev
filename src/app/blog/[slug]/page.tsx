@@ -26,7 +26,7 @@ export const generateMetadata = async ({ params }: BlogPostProps) => {
   };
 };
 
-export default async function BlogPost({ params }: BlogPostProps) {
+export default async function Page({ params }: BlogPostProps) {
   const { slug } = await params;
   const post = allPosts.find((post) => post._raw.flattenedPath === slug);
 

@@ -1,17 +1,19 @@
-import { allPosts } from 'contentlayer/generated';
-import Link from 'next/link';
+'use client';
 
-export default function Home() {
+import { HyperText } from '@/shared/ui/hyper-text';
+import { Particles } from '@/shared/ui/particles';
+
+export default function Page() {
   return (
-    <div className="prose">
-      {allPosts.map((post) => (
-        <article key={post._id}>
-          <Link href={`/blog/${post.slug}`}>
-            <h2>{post.title}</h2>
-          </Link>
-          {post.description && <p>{post.description}</p>}
-        </article>
-      ))}
+    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background flex-1">
+      <HyperText duration={1500}>wookhyung.</HyperText>
+      <Particles
+        className="absolute inset-0 z-0"
+        quantity={100}
+        ease={80}
+        color="#000"
+        refresh
+      />
     </div>
   );
 }
