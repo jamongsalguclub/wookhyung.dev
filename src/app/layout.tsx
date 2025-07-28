@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 import { Header } from '@/shared/ui/header';
 
 export const metadata: Metadata = {
-  title: 'wookhyung',
+  title: 'WOOKHYUNG.',
 };
 
 export default function RootLayout({
