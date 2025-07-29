@@ -24,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="font-mono max-w-2xl mx-auto py-6 px-4 min-h-dvh flex flex-col">
+      <body className="font-mono max-w-2xl mx-auto py-6 px-4 min-h-dvh flex flex-col bg-gray-100">
         <Providers>
           <Header />
           {children}

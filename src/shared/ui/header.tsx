@@ -7,9 +7,10 @@ import { usePathname } from 'next/navigation';
 import { GithubIcon } from '@/shared/icon/github-icon';
 
 const navigation = [
+  { name: 'Home', href: '/' },
   { name: 'Blog', href: '/blog' },
   { name: 'About', href: '/about' },
-];
+] as const;
 
 export function Header() {
   const pathname = usePathname();
@@ -21,7 +22,7 @@ export function Header() {
           href="/"
           className="text-xl font-semibold text-gray-900 hover:text-gray-600 transition-colors"
         >
-          <Image src="/wookhyung.jpeg" alt="wookhyung" width={40} height={40} />
+          <Image src="/wookhyung.png" alt="wookhyung" width={40} height={40} />
         </Link>
 
         <div className="flex items-center space-x-8">
@@ -36,7 +37,7 @@ export function Header() {
                 className={`text-sm font-medium transition-colors ${
                   isActive
                     ? 'text-gray-900'
-                    : 'text-gray-600 hover:text-gray-900'
+                    : 'text-gray-400 hover:text-gray-900'
                 }`}
               >
                 {item.name}

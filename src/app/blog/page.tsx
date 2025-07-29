@@ -11,7 +11,7 @@ export default function Page() {
       {posts.map((post) => (
         <Link
           href={`/blog/${post.slug}`}
-          className="border-b border-gray-200 py-3 px-2 hover:bg-gray-50 flex flex-col gap-2"
+          className="border-b border-gray-200 py-3 px-2 hover:bg-gray-200 flex flex-col gap-2 transition-colors"
           key={post._id}
         >
           <h2 className="text-lg font-bold">{post.title}</h2>

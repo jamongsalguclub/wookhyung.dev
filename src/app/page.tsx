@@ -5,7 +5,7 @@ import { Particles } from '@/shared/ui/particles';
 
 export default function Page() {
   return (
-    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background flex-1">
+    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg flex-1">
       <HyperText duration={1500}>wookhyung.</HyperText>
       <Particles
         className="absolute inset-0 z-0"
