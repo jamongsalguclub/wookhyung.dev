@@ -3,22 +3,37 @@ import rehypePrismPlus from 'rehype-prism-plus';
 
 export const Post = defineDocumentType(() => ({
   name: 'Post',
-  filePathPattern: `**/*.mdx`,
+  filePathPattern: '**/*.mdx',
   contentType: 'mdx',
   fields: {
     title: {
       type: 'string',
-      description: '포스트 제목',
+      description: 'title of the post',
       required: true,
     },
     date: {
       type: 'date',
-      description: '작성 날짜',
+      description: 'date of the post',
       required: true,
     },
     description: {
       type: 'string',
-      description: '포스트 설명',
+      description: 'description of the post',
+      required: false,
+    },
+    tags: {
+      type: 'list',
+      of: { type: 'string' },
+      required: false,
+    },
+    summary: {
+      type: 'string',
+      description: 'summary of the post',
+      required: false,
+    },
+    draft: {
+      type: 'boolean',
+      description: 'draft of the post',
       required: false,
     },
   },
