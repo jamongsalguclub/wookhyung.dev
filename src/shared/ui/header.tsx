@@ -4,7 +4,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import { GithubIcon } from '@/shared/icon/github-icon';
 import { cn } from '@/shared/lib/tailwind-merge';
 
 const navigation = [
@@ -45,14 +44,6 @@ export function Header() {
               </Link>
             );
           })}
-          <a
-            className="text-gray-600 hover:text-gray-900 size-6"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://github.com/w00khyung"
-          >
-            <GithubIcon className="size-6" />
-          </a>
         </div>
       </nav>
     </header>
