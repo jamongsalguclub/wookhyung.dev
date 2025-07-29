@@ -6,6 +6,7 @@ import { Header } from '@/shared/ui/header';
 
 export const metadata: Metadata = {
   title: 'WOOKHYUNG.',
+  description: 'Do you remember?',
 };
 
 export default function RootLayout({
