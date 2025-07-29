@@ -32,7 +32,7 @@ export default function AboutPage() {
 
         <div className="flex space-x-4 pt-4">
           <a
-            href="https://github.com/wookhyung"
+            href="https://github.com/w00khyung"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center w-12 h-12 rounded-full bg-white border border-gray-300 hover:bg-gray-50 transition-colors"
