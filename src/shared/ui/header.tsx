@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 import { GithubIcon } from '@/shared/icon/github-icon';
+import { cn } from '@/shared/lib/tailwind-merge';
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -34,11 +35,11 @@ export function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`text-sm font-medium transition-colors ${
-                  isActive
-                    ? 'text-gray-900'
-                    : 'text-gray-400 hover:text-gray-900'
-                }`}
+                className={cn(
+                  'text-sm font-medium transition-colors text-gray-800 hover:text-gray-900',
+                  isActive &&
+                    'underline underline-offset-4 decoration-gray-800 decoration-2',
+                )}
               >
                 {item.name}
               </Link>
