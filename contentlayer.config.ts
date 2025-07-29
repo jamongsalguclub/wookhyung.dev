@@ -16,19 +16,14 @@ export const Post = defineDocumentType(() => ({
       description: 'date of the post',
       required: true,
     },
-    description: {
+    summary: {
       type: 'string',
-      description: 'description of the post',
+      description: 'summary of the post',
       required: false,
     },
     tags: {
       type: 'list',
       of: { type: 'string' },
-      required: false,
-    },
-    summary: {
-      type: 'string',
-      description: 'summary of the post',
       required: false,
     },
     draft: {
