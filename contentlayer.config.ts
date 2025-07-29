@@ -1,4 +1,5 @@
 import { defineDocumentType, makeSource } from 'contentlayer2/source-files';
+import rehypePresetMinify from 'rehype-preset-minify';
 import rehypePrismPlus from 'rehype-prism-plus';
 import remarkGfm from 'remark-gfm';
 
@@ -54,10 +55,12 @@ export default makeSource({
       [
         rehypePrismPlus,
         {
+          defaultLanguage: 'js',
           ignoreMissing: true,
           showLineNumbers: true,
         },
       ],
+      rehypePresetMinify,
     ],
   },
 });
