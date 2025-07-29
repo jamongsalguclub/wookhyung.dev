@@ -15,8 +15,24 @@ export const metadata: Metadata = {
   },
   description: 'Do you remember?',
   openGraph: {
+    title: 'WOOKHYUNG.',
+    description: 'Do you remember?',
     siteName: 'WOOKHYUNG.',
     url: 'https://wookhyung.dev',
+    locale: 'ko_KR',
+    type: 'website',
+    images: [
+      {
+        url: '/wookhyung.png',
+        width: 1200,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'WOOKHYUNG.',
+    description: 'Do you remember?',
+    images: ['/wookhyung.png'],
   },
 };
 
