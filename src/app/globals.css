@@ -1,5 +1,5 @@
 @import 'tailwindcss';
-@import "tw-animate-css";
+@import 'tw-animate-css';
 /*---break---
 */
 @custom-variant dark (&:is(.dark *));
@@ -408,5 +408,29 @@ pre[class*='language-'] > code[class*='language-'] {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .prose {
+    & a {
+      color: var(--color-pink-500);
+      &:hover {
+        color: var(--color-pink-600);
+      }
+      & code {
+        color: var(--color-pink-400);
+      }
+    }
+    & :where(h1, h2) {
+      font-weight: 700;
+      letter-spacing: var(--tracking-tight);
+    }
+    & h3 {
+      font-weight: 600;
+    }
+    & :where(code):not(pre code) {
+      color: var(--color-indigo-500);
+    }
   }
 }
