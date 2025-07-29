@@ -8,6 +8,10 @@ import { Header } from '@/shared/ui/header';
 export const metadata: Metadata = {
   title: 'WOOKHYUNG.',
   description: 'Do you remember?',
+  openGraph: {
+    siteName: 'WOOKHYUNG.',
+    url: 'https://wookhyung.dev',
+  },
 };
 
 export default function RootLayout({
