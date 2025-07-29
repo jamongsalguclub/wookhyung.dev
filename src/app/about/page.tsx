@@ -22,8 +22,8 @@ export default function AboutPage() {
         </div>
 
         <div className="space-y-2">
-          <h1 className="text-3xl font-bold text-gray-900">WOOKHYUNG</h1>
-          <p className="text-xl text-gray-600">최형욱</p>
+          <h1 className="text-3xl font-bold text-gray-900">최형욱</h1>
+          <p className="text-xl text-gray-600">WOOKHYUNG</p>
         </div>
 
         <p className="text-base text-gray-600 max-w-md leading-relaxed">
