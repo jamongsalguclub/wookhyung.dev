@@ -9,7 +9,10 @@ import { Header } from '@/shared/ui/header';
 import { Providers } from './providers';
 
 export const metadata: Metadata = {
-  title: 'WOOKHYUNG.',
+  title: {
+    template: '%s | WOOKHYUNG.',
+    default: 'WOOKHYUNG.',
+  },
   description: 'Do you remember?',
   openGraph: {
     siteName: 'WOOKHYUNG.',

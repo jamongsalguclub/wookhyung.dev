@@ -1,7 +1,12 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 
 import { EmailIcon } from '@/shared/icon/email-icon';
 import { GithubIcon } from '@/shared/icon/github-icon';
+
+export const metadata: Metadata = {
+  title: 'About',
+};
 
 export default function AboutPage() {
   return (

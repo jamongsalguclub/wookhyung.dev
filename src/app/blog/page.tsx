@@ -1,5 +1,10 @@
 import { allPosts } from 'contentlayer/generated';
+import { Metadata } from 'next';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'Blog',
+};
 
 export default function Page() {
   const posts = allPosts
