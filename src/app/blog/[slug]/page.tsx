@@ -37,12 +37,9 @@ export default async function Page({ params }: BlogPostProps) {
   const Content = getMDXComponent(post.body.code);
 
   return (
-    <article className="py-6 prose">
-      <h1 className="mb-2">{post.title}</h1>
-      {post.description && (
-        <p className="text-xl mt-0 text-slate-700">{post.description}</p>
-      )}
-      <hr className="my-4" />
+    <article className="py-6 prose-sm sm:prose max-w-none break-words">
+      <h1>{post.title}</h1>
+      <hr />
       <Content
         components={{
           Image,
