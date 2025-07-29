@@ -37,7 +37,7 @@ export default async function Page({ params }: BlogPostProps) {
   const Content = getMDXComponent(post.body.code);
 
   return (
-    <article className="py-6 prose-sm sm:prose max-w-none break-words">
+    <article className="py-6 prose max-w-none break-words">
       <h1>{post.title}</h1>
       <hr />
       <Content
