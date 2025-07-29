@@ -3,9 +3,7 @@
 import Image from 'next/image';
 import { useMDXComponent } from 'next-contentlayer2/hooks';
 
-const components = {
-  Image,
-};
+import { CustomLink } from './link';
 
 interface MdxProps {
   code: string;
@@ -14,5 +12,12 @@ interface MdxProps {
 export function Mdx({ code }: MdxProps) {
   const Component = useMDXComponent(code);
 
-  return <Component components={components} />;
+  return (
+    <Component
+      components={{
+        Image,
+        a: CustomLink,
+      }}
+    />
+  );
 }

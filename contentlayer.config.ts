@@ -1,5 +1,6 @@
 import { defineDocumentType, makeSource } from 'contentlayer2/source-files';
 import rehypePrismPlus from 'rehype-prism-plus';
+import remarkGfm from 'remark-gfm';
 
 export const Post = defineDocumentType(() => ({
   name: 'Post',
@@ -48,6 +49,7 @@ export default makeSource({
   contentDirPath: 'posts',
   documentTypes: [Post],
   mdx: {
+    remarkPlugins: [remarkGfm],
     rehypePlugins: [
       [
         rehypePrismPlus,
