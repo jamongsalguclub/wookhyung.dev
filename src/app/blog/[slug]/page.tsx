@@ -22,7 +22,7 @@ export const generateMetadata = async ({ params }: BlogPostProps) => {
 
   return {
     title: post.title,
-    description: post.description,
+    description: post.summary,
   };
 };
 
