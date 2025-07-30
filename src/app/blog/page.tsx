@@ -1,7 +1,8 @@
-import { allPosts } from 'contentlayer/generated';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import serialize from 'serialize-javascript';
+
+import { allPosts } from '@/shared/util/post';
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -19,13 +20,9 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  const posts = allPosts
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-    .filter((post) => !post.draft);
-
   return (
     <>
-      {posts.map((post) => (
+      {allPosts.map((post) => (
         <Link
           href={`/blog/${post.slug}`}
           className="border-b border-gray-200 py-3 px-2 hover:bg-gray-200 flex flex-col gap-2 transition-colors"

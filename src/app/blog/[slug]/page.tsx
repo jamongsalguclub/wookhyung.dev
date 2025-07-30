@@ -1,9 +1,10 @@
-import { allPosts } from 'contentlayer/generated';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getMDXComponent } from 'next-contentlayer2/hooks';
 import serialize from 'serialize-javascript';
+
+import { allPosts } from '@/shared/util/post';
 
 import { Comments } from './ui/comments';
 import ProgressBar from './ui/progress-bar';
@@ -15,7 +16,7 @@ interface BlogPostProps {
   }>;
 }
 
-export const generateStaticParams = async () =>
+export const generateStaticParams = () =>
   allPosts.map((post) => ({ slug: post._raw.flattenedPath }));
 
 export const generateMetadata = async ({

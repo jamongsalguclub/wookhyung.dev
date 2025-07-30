@@ -43,6 +43,9 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://wookhyung.dev',
+    types: {
+      'application/rss+xml': 'https://wookhyung.dev/rss.xml',
+    },
   },
   other: {
     'naver-site-verification': 'b0cbc49b310075ca17a6a6868dd4a9ed0ee4b99d',

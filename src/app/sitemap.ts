@@ -1,5 +1,6 @@
-import { allPosts } from 'contentlayer/generated';
 import type { MetadataRoute } from 'next';
+
+import { allPosts } from '@/shared/util/post';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const posts = allPosts.map((post) => ({

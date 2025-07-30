@@ -21,7 +21,7 @@ export const Post = defineDocumentType(() => ({
     summary: {
       type: 'string',
       description: 'summary of the post',
-      required: false,
+      required: true,
     },
     tags: {
       type: 'list',
