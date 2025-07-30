@@ -3,6 +3,8 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getMDXComponent } from 'next-contentlayer2/hooks';
 
+import { Comments } from './ui/comments';
+
 interface BlogPostProps {
   params: Promise<{
     slug: string;
@@ -37,14 +39,17 @@ export default async function Page({ params }: BlogPostProps) {
   const Content = getMDXComponent(post.body.code);
 
   return (
-    <article className="py-6 prose max-w-none break-words">
-      <h1>{post.title}</h1>
-      <hr />
-      <Content
-        components={{
-          Image,
-        }}
-      />
-    </article>
+    <div className="flex flex-col gap-6">
+      <article className="py-6 prose max-w-none break-words">
+        <h1>{post.title}</h1>
+        <hr />
+        <Content
+          components={{
+            Image,
+          }}
+        />
+      </article>
+      <Comments />
+    </div>
   );
 }
