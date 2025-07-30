@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { ResolvingMetadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getMDXComponent } from 'next-contentlayer2/hooks';
@@ -10,7 +10,7 @@ import { Comments } from './ui/comments';
 import ProgressBar from './ui/progress-bar';
 import ScrollToTop from './ui/scroll-to-top';
 
-interface BlogPostProps {
+interface Props {
   params: Promise<{
     slug: string;
   }>;
@@ -19,9 +19,10 @@ interface BlogPostProps {
 export const generateStaticParams = () =>
   allPosts.map((post) => ({ slug: post._raw.flattenedPath }));
 
-export const generateMetadata = async ({
-  params,
-}: BlogPostProps): Promise<Metadata> => {
+export const generateMetadata = async (
+  { params }: Props,
+  parent: ResolvingMetadata,
+) => {
   const { slug } = await params;
   const post = allPosts.find((post) => post._raw.flattenedPath === slug);
 
@@ -29,16 +30,26 @@ export const generateMetadata = async ({
     throw new Error(`Post not found for slug: ${slug}`);
   }
 
+  const parentMetadata = await parent;
+
   return {
     title: post.title,
     description: post.summary,
     alternates: {
       canonical: `https://wookhyung.dev/blog/${slug}`,
     },
+    openGraph: {
+      ...parentMetadata.openGraph,
+      title: post.title,
+    },
+    twitter: {
+      ...parentMetadata.twitter,
+      title: post.title,
+    },
   };
 };
 
-export default async function Page({ params }: BlogPostProps) {
+export default async function Page({ params }: Props) {
   const { slug } = await params;
   const post = allPosts.find((post) => post._raw.flattenedPath === slug);
 

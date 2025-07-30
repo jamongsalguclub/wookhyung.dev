@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { ResolvingMetadata } from 'next';
 import Link from 'next/link';
 import serialize from 'serialize-javascript';
 
@@ -15,9 +15,24 @@ const jsonLd = {
   },
 };
 
-export const metadata: Metadata = {
-  title: 'Blog',
-};
+export async function generateMetadata(
+  props: unknown,
+  parent: ResolvingMetadata,
+) {
+  const parentMetadata = await parent;
+
+  return {
+    ...parentMetadata,
+    openGraph: {
+      ...parentMetadata.openGraph,
+      title: 'Blog',
+    },
+    twitter: {
+      ...parentMetadata.twitter,
+      title: 'Blog',
+    },
+  };
+}
 
 export default function Page() {
   return (

@@ -12,11 +12,14 @@ import { Providers } from './providers';
 export const metadata: Metadata = {
   title: {
     template: '%s | WOOKHYUNG.',
-    default: 'WOOKHYUNG.',
+    default: '최형욱 블로그 | WOOKHYUNG.',
   },
   description: 'Do you remember?',
   openGraph: {
-    title: 'WOOKHYUNG.',
+    title: {
+      template: '%s | WOOKHYUNG.',
+      default: '최형욱 블로그 | WOOKHYUNG.',
+    },
     description: 'Do you remember?',
     siteName: 'WOOKHYUNG.',
     url: 'https://wookhyung.dev',
@@ -26,12 +29,16 @@ export const metadata: Metadata = {
       {
         url: '/wookhyung.png',
         width: 1200,
+        height: 630,
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'WOOKHYUNG.',
+    title: {
+      template: '%s | WOOKHYUNG.',
+      default: '최형욱 블로그 | WOOKHYUNG.',
+    },
     description: 'Do you remember?',
     images: ['/wookhyung.png'],
   },
@@ -55,7 +62,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'WOOKHYUNG.',
+  name: '최형욱 블로그 | WOOKHYUNG.',
   url: 'https://wookhyung.dev',
   description: 'Do you remember?',
 };

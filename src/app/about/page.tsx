@@ -1,12 +1,27 @@
-import type { Metadata } from 'next';
+import type { ResolvingMetadata } from 'next';
 import Image from 'next/image';
 
 import { EmailIcon } from '@/shared/icon/email-icon';
 import { GithubIcon } from '@/shared/icon/github-icon';
 
-export const metadata: Metadata = {
-  title: 'About',
-};
+export async function generateMetadata(
+  props: unknown,
+  parent: ResolvingMetadata,
+) {
+  const parentMetadata = await parent;
+
+  return {
+    ...parentMetadata,
+    openGraph: {
+      ...parentMetadata.openGraph,
+      title: 'About',
+    },
+    twitter: {
+      ...parentMetadata.twitter,
+      title: 'About',
+    },
+  };
+}
 
 export default function AboutPage() {
   return (
