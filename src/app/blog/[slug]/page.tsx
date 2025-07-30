@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { getMDXComponent } from 'next-contentlayer2/hooks';
 
 import { Comments } from './ui/comments';
+import ProgressBar from './ui/progress-bar';
 
 interface BlogPostProps {
   params: Promise<{
@@ -40,6 +41,7 @@ export default async function Page({ params }: BlogPostProps) {
 
   return (
     <div className="flex flex-col gap-6">
+      <ProgressBar />
       <article className="py-6 prose max-w-none break-words">
         <h1>{post.title}</h1>
         {post.summary && (
