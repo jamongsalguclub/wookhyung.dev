@@ -42,6 +42,9 @@ export default async function Page({ params }: BlogPostProps) {
     <div className="flex flex-col gap-6">
       <article className="py-6 prose max-w-none break-words">
         <h1>{post.title}</h1>
+        {post.summary && (
+          <p className="text-xl mt-0 text-slate-700">{post.summary}</p>
+        )}
         <hr />
         <Content
           components={{
