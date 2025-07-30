@@ -6,6 +6,7 @@ import type { Metadata } from 'next';
 import serialize from 'serialize-javascript';
 
 import { Header } from '@/shared/ui/header';
+import { openGraph, twitter } from '@/shared/util/seo';
 
 import { Providers } from './providers';
 
@@ -15,33 +16,14 @@ export const metadata: Metadata = {
     default: '최형욱 블로그 | WOOKHYUNG.',
   },
   description: 'Do you remember?',
-  openGraph: {
-    title: {
-      template: '%s | WOOKHYUNG.',
-      default: '최형욱 블로그 | WOOKHYUNG.',
-    },
+  openGraph: openGraph({
+    title: '최형욱 블로그 | WOOKHYUNG.',
     description: 'Do you remember?',
-    siteName: 'WOOKHYUNG.',
-    url: 'https://wookhyung.dev',
-    locale: 'ko_KR',
-    type: 'website',
-    images: [
-      {
-        url: '/wookhyung.png',
-        width: 1200,
-        height: 630,
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: {
-      template: '%s | WOOKHYUNG.',
-      default: '최형욱 블로그 | WOOKHYUNG.',
-    },
+  }),
+  twitter: twitter({
+    title: '최형욱 블로그 | WOOKHYUNG.',
     description: 'Do you remember?',
-    images: ['/wookhyung.png'],
-  },
+  }),
   authors: [{ name: 'wookhyung', url: 'https://wookhyung.dev' }],
   keywords: ['wookhyung', 'wookhyung.dev', 'blog', 'frontend', 'developer'],
   robots: {

@@ -1,8 +1,9 @@
-import type { ResolvingMetadata } from 'next';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import serialize from 'serialize-javascript';
 
 import { allPosts } from '@/shared/util/post';
+import { openGraph, twitter } from '@/shared/util/seo';
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -15,24 +16,15 @@ const jsonLd = {
   },
 };
 
-export async function generateMetadata(
-  _props: unknown,
-  parent: ResolvingMetadata,
-) {
-  const parentMetadata = await parent;
-
-  return {
-    ...parentMetadata,
-    openGraph: {
-      ...parentMetadata.openGraph,
-      title: 'Blog',
-    },
-    twitter: {
-      ...parentMetadata.twitter,
-      title: 'Blog',
-    },
-  };
-}
+export const metadata: Metadata = {
+  title: 'Blog | WOOKHYUNG.',
+  openGraph: openGraph({
+    title: 'Blog | WOOKHYUNG.',
+  }),
+  twitter: twitter({
+    title: 'Blog | WOOKHYUNG.',
+  }),
+};
 
 export default function Page() {
   return (

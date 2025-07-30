@@ -1,27 +1,20 @@
-import type { ResolvingMetadata } from 'next';
+import type { Metadata } from 'next';
 import Image from 'next/image';
 
 import { EmailIcon } from '@/shared/icon/email-icon';
 import { GithubIcon } from '@/shared/icon/github-icon';
+import { openGraph, twitter } from '@/shared/util/seo';
 
-export async function generateMetadata(
-  _props: unknown,
-  parent: ResolvingMetadata,
-) {
-  const parentMetadata = await parent;
-
-  return {
-    ...parentMetadata,
-    openGraph: {
-      ...parentMetadata.openGraph,
-      title: 'About',
-    },
-    twitter: {
-      ...parentMetadata.twitter,
-      title: 'About',
-    },
-  };
-}
+export const metadata: Metadata = {
+  title: 'About | WOOKHYUNG.',
+  description: 'About',
+  openGraph: openGraph({
+    title: 'About | WOOKHYUNG.',
+  }),
+  twitter: twitter({
+    title: 'About | WOOKHYUNG.',
+  }),
+};
 
 export default function AboutPage() {
   return (
