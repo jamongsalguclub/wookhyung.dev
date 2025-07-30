@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef,useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function ProgressBar() {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -42,7 +42,7 @@ export default function ProgressBar() {
   return (
     <div className="fixed top-0 left-0 w-full h-1 bg-gray-200 z-50">
       <div
-        className="h-full bg-blue-500 transition-transform duration-75 ease-linear origin-left"
+        className="h-full bg-[#799EFF] transition-transform duration-75 ease-linear origin-left"
         style={{
           transform: `scaleX(${scrollProgress / 100})`,
         }}
