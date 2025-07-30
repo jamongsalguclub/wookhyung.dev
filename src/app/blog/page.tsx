@@ -1,6 +1,18 @@
 import { allPosts } from 'contentlayer/generated';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import serialize from 'serialize-javascript';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Blog',
+  name: 'Blog',
+  url: 'https://wookhyung.dev/blog',
+  author: {
+    '@type': 'Person',
+    name: 'wookhyung',
+  },
+};
 
 export const metadata: Metadata = {
   title: 'Blog',
@@ -30,6 +42,10 @@ export default function Page() {
           </p>
         </Link>
       ))}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serialize(jsonLd) }}
+      />
     </>
   );
 }

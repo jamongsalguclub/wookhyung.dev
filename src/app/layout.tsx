@@ -3,6 +3,7 @@ import './globals.css';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { Analytics } from '@vercel/analytics/next';
 import type { Metadata } from 'next';
+import serialize from 'serialize-javascript';
 
 import { Header } from '@/shared/ui/header';
 
@@ -34,9 +35,26 @@ export const metadata: Metadata = {
     description: 'Do you remember?',
     images: ['/wookhyung.png'],
   },
+  authors: [{ name: 'wookhyung', url: 'https://wookhyung.dev' }],
+  keywords: ['wookhyung', 'wookhyung.dev', 'blog', 'frontend', 'developer'],
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: 'https://wookhyung.dev',
+  },
   other: {
     'naver-site-verification': 'b0cbc49b310075ca17a6a6868dd4a9ed0ee4b99d',
   },
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'WOOKHYUNG.',
+  url: 'https://wookhyung.dev',
+  description: 'Do you remember?',
 };
 
 export default function RootLayout({
@@ -53,6 +71,10 @@ export default function RootLayout({
           <Analytics />
           <GoogleAnalytics gaId="G-F7VQE719RE" />
         </Providers>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: serialize(jsonLd) }}
+        />
       </body>
     </html>
   );

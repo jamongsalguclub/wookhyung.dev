@@ -32,6 +32,8 @@
     "rehype-preset-minify": "^7.0.1",
     "rehype-prism-plus": "^2.0.1",
     "remark-gfm": "^4.0.1",
+    "schema-dts": "^1.1.5",
+    "serialize-javascript": "^6.0.2",
     "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
@@ -41,6 +43,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/serialize-javascript": "^5.0.4",
     "eslint": "^9",
     "eslint-config-next": "15.4.3",
     "eslint-config-prettier": "^10.1.8",

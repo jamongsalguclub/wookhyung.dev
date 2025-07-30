@@ -1,6 +1,14 @@
+import { allPosts } from 'contentlayer/generated';
 import type { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const posts = allPosts.map((post) => ({
+    url: `https://wookhyung.dev/blog/${post.slug}`,
+    lastModified: post.date,
+    changeFrequency: 'daily' as const,
+    priority: 0.7,
+  }));
+
   return [
     {
       url: 'https://wookhyung.dev',
@@ -20,5 +28,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.5,
     },
+    ...posts,
   ];
 }
