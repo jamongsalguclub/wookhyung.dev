@@ -6,8 +6,7 @@ import { GithubIcon } from '@/shared/icon/github-icon';
 import { openGraph, twitter } from '@/shared/util/seo';
 
 export const metadata: Metadata = {
-  title: 'About | WOOKHYUNG.',
-  description: 'About',
+  title: 'About',
   openGraph: openGraph({
     title: 'About | WOOKHYUNG.',
   }),

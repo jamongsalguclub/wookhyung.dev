@@ -17,7 +17,7 @@ const jsonLd = {
 };
 
 export const metadata: Metadata = {
-  title: 'Blog | WOOKHYUNG.',
+  title: 'Blog',
   openGraph: openGraph({
     title: 'Blog | WOOKHYUNG.',
   }),

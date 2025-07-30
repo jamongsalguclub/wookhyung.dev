@@ -16,9 +16,9 @@ export const openGraph = ({
     type: 'website',
     images: [
       {
-        url: '/wookhyung.png',
+        url: '/opengraph-image.png',
         width: 1200,
-        height: 630,
+        height: 600,
       },
     ],
   };
@@ -35,6 +35,6 @@ export const twitter = ({
     card: 'summary_large_image',
     title,
     description,
-    images: ['/wookhyung.png'],
+    images: ['/opengraph-image.png'],
   };
 };
