@@ -13,7 +13,7 @@ export const Comments = () => {
     scriptElem.async = true;
     scriptElem.crossOrigin = 'anonymous';
 
-    scriptElem.setAttribute('data-repo', 'w00khyung/wookhyung.');
+    scriptElem.setAttribute('data-repo', 'wookhyungx/wookhyung.');
     scriptElem.setAttribute('data-repo-id', 'R_kgDOPIIAEQ');
     scriptElem.setAttribute('data-category', 'Comments');
     scriptElem.setAttribute('data-category-id', 'DIC_kwDOPIIAEc4CtkB_');
