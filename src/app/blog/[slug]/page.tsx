@@ -5,6 +5,7 @@ import { getMDXComponent } from 'next-contentlayer2/hooks';
 
 import { Comments } from './ui/comments';
 import ProgressBar from './ui/progress-bar';
+import ScrollToTop from './ui/scroll-to-top';
 
 interface BlogPostProps {
   params: Promise<{
@@ -40,7 +41,7 @@ export default async function Page({ params }: BlogPostProps) {
   const Content = getMDXComponent(post.body.code);
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-6 pb-40">
       <ProgressBar />
       <article className="py-6 prose max-w-none break-words">
         <h1>{post.title}</h1>
@@ -55,6 +56,7 @@ export default async function Page({ params }: BlogPostProps) {
         />
       </article>
       <Comments />
+      <ScrollToTop />
     </div>
   );
 }
