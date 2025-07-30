@@ -134,7 +134,7 @@ export default function AboutPage() {
                 wookhyung.dev
               </a>
               <span className="text-gray-700">
-                (2025.07 - current, Personal Blog)
+                (Personal Blog, 2025.07 - current)
               </span>
             </li>
             <li className="text-gray-700 space-x-2">
@@ -147,7 +147,7 @@ export default function AboutPage() {
                 Google Chat Webhook Action
               </a>
               <span className="text-gray-700">
-                (2025.06, GitHub Action for Google Chat)
+                (GitHub Action for Google Chat, 2025.06)
               </span>
             </li>
             <li className="text-gray-700 space-x-2">
@@ -160,7 +160,7 @@ export default function AboutPage() {
                 nowoo
               </a>
               <span className="text-gray-700">
-                (24.01 - 24.02, Mapleland Search)
+                (Mapleland Search, 24.01 - 24.02)
               </span>
             </li>
           </ul>
