@@ -34,6 +34,9 @@ export const metadata: Metadata = {
     description: 'Do you remember?',
     images: ['/wookhyung.png'],
   },
+  other: {
+    'naver-site-verification': 'b0cbc49b310075ca17a6a6868dd4a9ed0ee4b99d',
+  },
 };
 
 export default function RootLayout({
