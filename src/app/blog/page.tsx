@@ -16,7 +16,7 @@ const jsonLd = {
 };
 
 export async function generateMetadata(
-  props: unknown,
+  _props: unknown,
   parent: ResolvingMetadata,
 ) {
   const parentMetadata = await parent;

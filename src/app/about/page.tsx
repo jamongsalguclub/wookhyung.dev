@@ -5,7 +5,7 @@ import { EmailIcon } from '@/shared/icon/email-icon';
 import { GithubIcon } from '@/shared/icon/github-icon';
 
 export async function generateMetadata(
-  props: unknown,
+  _props: unknown,
   parent: ResolvingMetadata,
 ) {
   const parentMetadata = await parent;
