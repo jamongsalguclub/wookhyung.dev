@@ -26,6 +26,24 @@ export const metadata: Metadata = {
   }),
   authors: [{ name: 'wookhyung', url: 'https://wookhyung.dev' }],
   keywords: ['wookhyung', 'wookhyung.dev', 'blog', 'frontend', 'developer'],
+  icons: {
+    icon: [
+      {
+        url: '/favicon-16x16.png',
+        sizes: '16x16',
+      },
+      {
+        url: '/favicon-32x32.png',
+        sizes: '32x32',
+      },
+    ],
+    apple: [
+      {
+        url: '/apple-icon.png',
+        sizes: '180x180',
+      },
+    ],
+  },
   robots: {
     index: true,
     follow: true,
