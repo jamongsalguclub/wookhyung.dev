@@ -103,11 +103,13 @@ const Path = (props: PathProps) => (
 
 const MenuToggle = ({ toggle }: { toggle: () => void }) => (
   <button
+    type="button"
     onClick={toggle}
     className="md:hidden p-2 text-gray-800 hover:text-gray-900 focus:outline-none relative z-50"
     aria-label="메뉴 토글"
   >
     <svg width="20" height="20" viewBox="0 0 20 20">
+      <title>메뉴</title>
       <Path
         variants={{
           closed: { d: 'M 2 2.5 L 18 2.5' },
@@ -132,7 +134,7 @@ const MenuToggle = ({ toggle }: { toggle: () => void }) => (
   </button>
 );
 
-export function Header() {
+export const Header = () => {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -154,7 +156,7 @@ export function Header() {
 
   return (
     <>
-      <header className="mb-4 relative z-50">
+      <header className="z-50 sticky top-0 bg-gray-100/80 px-4 py-3 backdrop-blur-md">
         <nav className="flex items-center justify-between">
           <Link
             href="/"
@@ -171,7 +173,7 @@ export function Header() {
           <div className="hidden md:flex items-center space-x-8">
             {navigation.map((item) => {
               const isActive =
-                pathname === item.href || pathname.startsWith(item.href + '/');
+                pathname === item.href || pathname.startsWith(`${item.href}/`);
 
               return (
                 <Link
@@ -209,22 +211,30 @@ export function Header() {
         <div
           className="absolute inset-0 bg-black/20 backdrop-blur-sm"
           onClick={() => setIsMobileMenuOpen(false)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              setIsMobileMenuOpen(false);
+            }
+          }}
+          role="button"
+          tabIndex={0}
+          aria-label="메뉴 닫기"
         />
 
         <div className="fixed top-0 left-0 right-0 h-screen">
           <motion.div
-            className="absolute top-0 left-0 right-0 bg-white shadow-lg h-full"
+            className="absolute top-0 left-0 right-0 bg-gray-100 shadow-lg h-full"
             variants={sidebarVariants}
           />
 
           <div className="relative h-full">
-            <div className="h-20" />
+            <div className="h-14 bg-gray-100" />
 
             <motion.div className="px-6 py-4 space-y-1" variants={menuVariants}>
               {navigation.map((item) => {
                 const isActive =
                   pathname === item.href ||
-                  pathname.startsWith(item.href + '/');
+                  pathname.startsWith(`${item.href}/`);
 
                 return (
                   <motion.div key={item.name} variants={itemVariants}>
@@ -232,7 +242,7 @@ export function Header() {
                       href={item.href}
                       onClick={() => setIsMobileMenuOpen(false)}
                       className={cn(
-                        'block px-4 py-3 text-lg font-medium text-gray-800 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors',
+                        'block px-4 py-3 text-lg font-medium text-gray-800 hover:text-gray-900 hover:bg-gray-200 rounded-lg transition-colors',
                         isActive && 'bg-gray-100 text-gray-900',
                       )}
                     >
@@ -247,4 +257,4 @@ export function Header() {
       </motion.div>
     </>
   );
-}
+};

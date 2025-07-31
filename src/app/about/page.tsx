@@ -57,9 +57,7 @@ export default function AboutPage() {
         <section>
           <h2 className="text-xl font-bold text-gray-900 mb-4">경력</h2>
           <ul className="list-disc ml-6 space-y-2">
-            <li className="text-gray-700">
-              Frontend Engineer (22.12 - current)
-            </li>
+            <li className="text-gray-700">프론트엔드 개발자 (22.12 - 현재)</li>
           </ul>
         </section>
 
@@ -126,7 +124,7 @@ export default function AboutPage() {
               {
                 title: 'wookhyung.dev',
                 link: 'https://github.com/wookhyungx/wookhyung.dev',
-                description: '개인 블로그, 25.07 - current',
+                description: '개인 블로그, 25.07 - 현재',
               },
               {
                 title: 'Google Chat Webhook Action',
