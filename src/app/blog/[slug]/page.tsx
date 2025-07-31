@@ -72,7 +72,7 @@ export default async function Page({ params }: Props) {
 
   return (
     <>
-      <div className="flex flex-col gap-6 pb-40">
+      <div className="flex flex-col gap-6 pb-40 font-pretendard">
         <ProgressBar />
         <article className="py-6 prose max-w-none break-words">
           <h1>{post.title}</h1>

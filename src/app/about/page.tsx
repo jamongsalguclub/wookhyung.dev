@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen py-12">
+    <div className="min-h-screen py-12 font-pretendard">
       <div className="flex flex-col items-center text-center pb-16">
         <div className="relative rounded-full overflow-hidden border-2 border-gray-300 mb-6">
           <Image

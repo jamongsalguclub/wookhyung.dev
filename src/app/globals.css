@@ -434,3 +434,7 @@ pre[class*='language-'] > code[class*='language-'] {
     }
   }
 }
+
+@theme inline {
+  --font-pretendard: var(--font-pretendard);
+}

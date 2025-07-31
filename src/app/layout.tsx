@@ -3,6 +3,7 @@ import './globals.css';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { Analytics } from '@vercel/analytics/next';
 import type { Metadata } from 'next';
+import localFont from 'next/font/local';
 import serialize from 'serialize-javascript';
 
 import { Header } from '@/shared/ui/header';
@@ -67,14 +68,23 @@ const jsonLd = {
   description: 'Do you remember?',
 };
 
+const pretendard = localFont({
+  src: '../shared/fonts/PretendardVariable.woff2',
+  display: 'swap',
+  weight: '100 900',
+  variable: '--font-pretendard',
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className="font-mono max-w-4xl mx-auto py-6 px-4 min-h-dvh flex flex-col bg-gray-100">
+    <html lang="ko" className={pretendard.variable} suppressHydrationWarning>
+      <body
+        className={`font-mono max-w-3xl mx-auto py-6 px-4 min-h-dvh flex flex-col bg-gray-100`}
+      >
         <Providers>
           <Header />
           {children}
