@@ -58,7 +58,7 @@ export default function AboutPage() {
           <h2 className="text-xl font-bold text-gray-900 mb-4">Experience</h2>
           <ul className="list-disc ml-6 space-y-2">
             <li className="text-gray-700">
-              Frontend Engineer (2022.12 - current)
+              Frontend Engineer (22.12 - current)
             </li>
           </ul>
         </section>
@@ -141,7 +141,7 @@ export default function AboutPage() {
                 wookhyung.dev
               </a>
               <span className="text-gray-700">
-                (Personal Blog, 2025.07 - current)
+                (Personal Blog, 25.07 - current)
               </span>
             </li>
             <li className="text-gray-700 space-x-2">
@@ -154,7 +154,7 @@ export default function AboutPage() {
                 Google Chat Webhook Action
               </a>
               <span className="text-gray-700">
-                (GitHub Action for Google Chat, 2025.06)
+                (GitHub Action for Google Chat, 25.06 - 25.07)
               </span>
             </li>
             <li className="text-gray-700 space-x-2">
@@ -170,16 +170,6 @@ export default function AboutPage() {
                 (Mapleland Search, 24.01 - 24.02)
               </span>
             </li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="text-xl font-bold text-gray-900 mb-4">Education</h2>
-          <ul className="list-disc ml-6 space-y-2">
-            <li className="text-gray-700">
-              Bachelor of International Commerce, KMOU (2016.03 - 2022.02)
-            </li>
-            <li className="text-gray-700">KDT Bootcamp, Elice (2022)</li>
           </ul>
         </section>
 
