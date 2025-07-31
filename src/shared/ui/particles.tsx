@@ -75,11 +75,12 @@ type Circle = {
   dx: number;
   dy: number;
   magnetism: number;
+  color: string;
 };
 
 export const Particles: React.FC<ParticlesProps> = ({
   className = '',
-  quantity = 100,
+  quantity = 200,
   staticity = 50,
   ease = 50,
   size = 0.4,
@@ -176,6 +177,29 @@ export const Particles: React.FC<ParticlesProps> = ({
     }
   };
 
+  const spaceColors = [
+    '#1E3A8A',
+    '#1E40AF',
+    '#3730A3',
+    '#581C87',
+    '#7C2D92',
+    '#BE185D',
+    '#C2185B',
+    '#0F766E',
+    '#0E7490',
+    '#374151',
+    '#6B21A8',
+    '#DC2626',
+  ];
+
+  const colorRgbMap = spaceColors.reduce(
+    (acc, color) => {
+      acc[color] = hexToRgb(color);
+      return acc;
+    },
+    {} as Record<string, number[]>,
+  );
+
   const circleParams = (): Circle => {
     const x = Math.floor(Math.random() * canvasSize.current.w);
     const y = Math.floor(Math.random() * canvasSize.current.h);
@@ -187,6 +211,10 @@ export const Particles: React.FC<ParticlesProps> = ({
     const dx = (Math.random() - 0.5) * 0.1;
     const dy = (Math.random() - 0.5) * 0.1;
     const magnetism = 0.1 + Math.random() * 4;
+
+    const particleColor =
+      spaceColors[Math.floor(Math.random() * spaceColors.length)];
+
     return {
       x,
       y,
@@ -198,14 +226,15 @@ export const Particles: React.FC<ParticlesProps> = ({
       dx,
       dy,
       magnetism,
+      color: particleColor,
     };
   };
-
-  const rgb = hexToRgb(color);
 
   const drawCircle = (circle: Circle, update = false) => {
     if (context.current) {
       const { x, y, translateX, translateY, size, alpha } = circle;
+      const rgb = colorRgbMap[circle.color];
+
       context.current.translate(translateX, translateY);
       context.current.beginPath();
       context.current.arc(x, y, size, 0, 2 * Math.PI);
