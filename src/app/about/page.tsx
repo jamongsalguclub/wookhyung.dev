@@ -85,91 +85,70 @@ export default function AboutPage() {
             </a>
           </h3>
           <ul className="list-disc ml-6 space-y-2">
-            <li className="text-gray-700">
-              <a
-                href="https://github.com/TanStack/router/pull/4323"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:underline"
-              >
-                make head function scripts load properly
-              </a>
-            </li>
-            <li className="text-gray-700">
-              <a
-                href="https://github.com/TanStack/router/pull/4611"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:underline"
-              >
-                support SSR for non-Latin character route paths
-              </a>
-            </li>
-            <li className="text-gray-700">
-              <a
-                href="https://github.com/TanStack/router/pull/4665"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:underline"
-              >
-                properly merge middleware context objects
-              </a>
-            </li>
-            <li className="text-gray-700">
-              <a
-                href="https://github.com/TanStack/router/pull/4664"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:underline"
-              >
-                reset statusCode to 200 on navigation start
-              </a>
-            </li>
+            {[
+              {
+                title: 'make head function scripts load properly',
+                link: 'https://github.com/TanStack/router/pull/4323',
+              },
+              {
+                title: 'support SSR for non-Latin character route paths',
+                link: 'https://github.com/TanStack/router/pull/4611',
+              },
+              {
+                title: 'properly merge middleware context objects',
+                link: 'https://github.com/TanStack/router/pull/4665',
+              },
+              {
+                title: 'reset statusCode to 200 on navigation start',
+                link: 'https://github.com/TanStack/router/pull/4664',
+              },
+            ].map(({ title, link }) => (
+              <li key={title} className="text-gray-700">
+                <a
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:underline"
+                >
+                  {title}
+                </a>
+              </li>
+            ))}
           </ul>
         </section>
 
         <section>
           <h2 className="text-xl font-bold text-gray-900 mb-4">Projects</h2>
           <ul className="list-disc ml-6 space-y-2">
-            <li className="text-gray-700 space-x-2">
-              <a
-                href="https://github.com/wookhyungx/wookhyung.dev"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:underline"
-              >
-                wookhyung.dev
-              </a>
-              <span className="text-gray-700">
-                (Personal Blog, 25.07 - current)
-              </span>
-            </li>
-            <li className="text-gray-700 space-x-2">
-              <a
-                href="https://github.com/wookhyungx/google-chat-webhook-action"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:underline"
-              >
-                Google Chat Webhook Action
-              </a>
-              <span className="text-gray-700">
-                (GitHub Action for Google Chat, 25.06 - 25.07)
-              </span>
-            </li>
-            <li className="text-gray-700 space-x-2">
-              <a
-                href="https://github.com/thoupe/nowoo"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:underline"
-              >
-                nowoo
-              </a>
-              <span className="text-gray-700">
-                (Mapleland Search, 24.01 - 24.02)
-              </span>
-            </li>
+            {[
+              {
+                title: 'wookhyung.dev',
+                link: 'https://github.com/wookhyungx/wookhyung.dev',
+                description: 'Personal Blog, 25.07 - current',
+              },
+              {
+                title: 'Google Chat Webhook Action',
+                link: 'https://github.com/wookhyungx/google-chat-webhook-action',
+                description: 'GitHub Action for Google Chat, 25.06 - 25.07',
+              },
+              {
+                title: 'nowoo',
+                link: 'https://github.com/thoupe/nowoo',
+                description: 'Mapleland Search, 24.01 - 24.02',
+              },
+            ].map(({ title, link, description }) => (
+              <li key={title} className="text-gray-700 space-x-2">
+                <a
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:underline"
+                >
+                  {title}
+                </a>
+                <span className="text-gray-700">({description})</span>
+              </li>
+            ))}
           </ul>
         </section>
 
