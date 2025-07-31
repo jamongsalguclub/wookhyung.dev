@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const openGraph = ({
   title = '최형욱 블로그 | WOOKHYUNG.',
-  description = 'Do you remember?',
+  description = 'A personal collection of thoughts—some about code, some about everything else.',
 }: {
   title?: string;
   description?: string;
@@ -26,7 +26,7 @@ export const openGraph = ({
 
 export const twitter = ({
   title = '최형욱 블로그 | WOOKHYUNG.',
-  description = 'Do you remember?',
+  description = 'A personal collection of thoughts—some about code, some about everything else.',
 }: {
   title?: string;
   description?: string;

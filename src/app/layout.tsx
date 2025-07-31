@@ -16,14 +16,17 @@ export const metadata: Metadata = {
     template: '%s | WOOKHYUNG.',
     default: '최형욱 블로그 | WOOKHYUNG.',
   },
-  description: 'Do you remember?',
+  description:
+    'A personal collection of thoughts—some about code, some about everything else.',
   openGraph: openGraph({
     title: '최형욱 블로그 | WOOKHYUNG.',
-    description: 'Do you remember?',
+    description:
+      'A personal collection of thoughts—some about code, some about everything else.',
   }),
   twitter: twitter({
     title: '최형욱 블로그 | WOOKHYUNG.',
-    description: 'Do you remember?',
+    description:
+      'A personal collection of thoughts—some about code, some about everything else.',
   }),
   authors: [{ name: 'wookhyung', url: 'https://wookhyung.dev' }],
   keywords: ['wookhyung', 'wookhyung.dev', 'blog', 'frontend', 'developer'],
@@ -65,7 +68,8 @@ const jsonLd = {
   '@type': 'WebSite',
   name: '최형욱 블로그 | WOOKHYUNG.',
   url: 'https://wookhyung.dev',
-  description: 'Do you remember?',
+  description:
+    'A personal collection of thoughts—some about code, some about everything else.',
 };
 
 const pretendard = localFont({

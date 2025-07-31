@@ -4,7 +4,8 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: '최형욱 블로그 | WOOKHYUNG.',
     short_name: '최형욱 블로그 | WOOKHYUNG.',
-    description: 'Do you remember?',
+    description:
+      'A personal collection of thoughts—some about code, some about everything else.',
     start_url: '/',
     display: 'standalone',
     background_color: '#f3f4f6',
