@@ -126,7 +126,7 @@ export default function AboutPage() {
               {
                 title: 'wookhyung.dev',
                 link: 'https://github.com/wookhyungx/wookhyung.dev',
-                description: 'Personal Blog, 25.07 - current',
+                description: '개인 블로그, 25.07 - current',
               },
               {
                 title: 'Google Chat Webhook Action',
@@ -136,7 +136,7 @@ export default function AboutPage() {
               {
                 title: 'nowoo',
                 link: 'https://github.com/thoupe/nowoo',
-                description: 'Mapleland Search, 24.01 - 24.02',
+                description: '메이플랜드 아이템 검색 사이트, 24.01 - 24.02',
               },
             ].map(({ title, link, description }) => (
               <li key={title} className="text-gray-700 space-x-2">
