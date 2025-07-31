@@ -1,6 +1,7 @@
 'use client';
 
-import { format } from 'date-fns';
+import NumberFlow, { NumberFlowGroup } from '@number-flow/react';
+import { ClockIcon } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 import { useEffect, useState } from 'react';
 
@@ -11,11 +12,20 @@ const HYPER_TEXT_DURATION = 1500;
 
 export default function Page() {
   const [showTime, setShowTime] = useState(false);
-  const [currentTime, setCurrentTime] = useState('');
+  const [currentTime, setCurrentTime] = useState({
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setCurrentTime(format(new Date(), 'HH:mm:ss'));
+      const now = new Date();
+      setCurrentTime({
+        hours: now.getHours(),
+        minutes: now.getMinutes(),
+        seconds: now.getSeconds(),
+      });
       setShowTime(true);
     }, HYPER_TEXT_DURATION + 200);
 
@@ -26,7 +36,12 @@ export default function Page() {
     if (!showTime) return;
 
     const interval = setInterval(() => {
-      setCurrentTime(format(new Date(), 'HH:mm:ss'));
+      const now = new Date();
+      setCurrentTime({
+        hours: now.getHours(),
+        minutes: now.getMinutes(),
+        seconds: now.getSeconds(),
+      });
     }, 1000);
 
     return () => clearInterval(interval);
@@ -48,6 +63,7 @@ export default function Page() {
       <AnimatePresence>
         {showTime && (
           <motion.div
+            className="flex items-center gap-2"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -55,9 +71,33 @@ export default function Page() {
               ease: [0.25, 0.25, 0.25, 0.75],
               delay: 0.2,
             }}
-            className="text-2xl text-gray-800"
           >
-            {currentTime}
+            <ClockIcon />
+            <NumberFlowGroup>
+              <div
+                style={{
+                  fontVariantNumeric: 'tabular-nums',
+                }}
+                className="text-2xl flex items-baseline font-semibold text-gray-800"
+              >
+                <NumberFlow
+                  value={currentTime.hours}
+                  format={{ minimumIntegerDigits: 2 }}
+                />
+                <NumberFlow
+                  prefix=":"
+                  value={currentTime.minutes}
+                  digits={{ 1: { max: 5 } }}
+                  format={{ minimumIntegerDigits: 2 }}
+                />
+                <NumberFlow
+                  prefix=":"
+                  value={currentTime.seconds}
+                  digits={{ 1: { max: 5 } }}
+                  format={{ minimumIntegerDigits: 2 }}
+                />
+              </div>
+            </NumberFlowGroup>
           </motion.div>
         )}
       </AnimatePresence>
