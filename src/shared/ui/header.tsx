@@ -13,6 +13,7 @@ const navigation = [
   { name: 'Home', href: '/' },
   { name: 'Blog', href: '/blog' },
   { name: 'About', href: '/about' },
+  { name: 'Feed', href: '/feed' },
 ] as const;
 
 const sidebarVariants: Variants = {
