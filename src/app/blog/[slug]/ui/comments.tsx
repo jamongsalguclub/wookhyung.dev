@@ -2,6 +2,8 @@
 
 import { useEffect, useRef } from 'react';
 
+import { siteConfig } from '@/shared/config/site';
+
 export const Comments = () => {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -13,10 +15,10 @@ export const Comments = () => {
     scriptElem.async = true;
     scriptElem.crossOrigin = 'anonymous';
 
-    scriptElem.setAttribute('data-repo', 'wookhyungx/wookhyung.');
-    scriptElem.setAttribute('data-repo-id', 'R_kgDOPIIAEQ');
-    scriptElem.setAttribute('data-category', 'Comments');
-    scriptElem.setAttribute('data-category-id', 'DIC_kwDOPIIAEc4CtkB_');
+    scriptElem.setAttribute('data-repo', siteConfig.github.repo);
+    scriptElem.setAttribute('data-repo-id', siteConfig.github.repoId);
+    scriptElem.setAttribute('data-category', siteConfig.github.category);
+    scriptElem.setAttribute('data-category-id', siteConfig.github.categoryId);
     scriptElem.setAttribute('data-mapping', 'pathname');
     scriptElem.setAttribute('data-strict', '0');
     scriptElem.setAttribute('data-reactions-enabled', '1');

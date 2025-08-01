@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
 
+import { siteConfig } from '@/shared/config/site';
+
 export const openGraph = ({
-  title = '최형욱 블로그 | WOOKHYUNG.',
-  description = 'A personal collection of thoughts—some about code, some about everything else.',
+  title = siteConfig.title.default,
+  description = siteConfig.description,
 }: {
   title?: string;
   description?: string;
@@ -10,13 +12,13 @@ export const openGraph = ({
   return {
     title,
     description,
-    siteName: 'WOOKHYUNG.',
-    url: 'https://wookhyung.dev',
-    locale: 'ko_KR',
+    siteName: siteConfig.siteName,
+    url: siteConfig.url,
+    locale: siteConfig.locale,
     type: 'website',
     images: [
       {
-        url: '/opengraph-image.png',
+        url: siteConfig.images.opengraph,
         width: 1200,
         height: 600,
       },
@@ -25,8 +27,8 @@ export const openGraph = ({
 };
 
 export const twitter = ({
-  title = '최형욱 블로그 | WOOKHYUNG.',
-  description = 'A personal collection of thoughts—some about code, some about everything else.',
+  title = siteConfig.title.default,
+  description = siteConfig.description,
 }: {
   title?: string;
   description?: string;
@@ -35,6 +37,6 @@ export const twitter = ({
     card: 'summary_large_image',
     title,
     description,
-    images: ['/opengraph-image.png'],
+    images: [siteConfig.images.opengraph],
   };
 };

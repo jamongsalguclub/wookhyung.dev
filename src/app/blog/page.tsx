@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import serialize from 'serialize-javascript';
 
+import { siteConfig } from '@/shared/config/site';
 import { allPosts } from '@/shared/util/post';
 import { openGraph, twitter } from '@/shared/util/seo';
 
@@ -9,20 +10,20 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Blog',
   name: 'Blog',
-  url: 'https://wookhyung.dev/blog',
+  url: `${siteConfig.url}/blog`,
   author: {
     '@type': 'Person',
-    name: 'wookhyung',
+    name: siteConfig.author.name,
   },
 };
 
 export const metadata: Metadata = {
   title: 'Blog',
   openGraph: openGraph({
-    title: 'Blog | WOOKHYUNG.',
+    title: `Blog | ${siteConfig.siteName}`,
   }),
   twitter: twitter({
-    title: 'Blog | WOOKHYUNG.',
+    title: `Blog | ${siteConfig.siteName}`,
   }),
 };
 

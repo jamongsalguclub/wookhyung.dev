@@ -1,10 +1,11 @@
 import type { MetadataRoute } from 'next';
 
+import { siteConfig } from '@/shared/config/site';
 import { allPosts } from '@/shared/util/post';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const posts = allPosts.map((post) => ({
-    url: `https://wookhyung.dev/blog/${post.slug}`,
+    url: `${siteConfig.url}/blog/${post.slug}`,
     lastModified: post.date,
     changeFrequency: 'daily' as const,
     priority: 0.7,
@@ -12,19 +13,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     {
-      url: 'https://wookhyung.dev',
+      url: siteConfig.url,
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 1,
     },
     {
-      url: 'https://wookhyung.dev/about',
+      url: `${siteConfig.url}/about`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: 'https://wookhyung.dev/blog',
+      url: `${siteConfig.url}/blog`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.5,

@@ -6,70 +6,44 @@ import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import serialize from 'serialize-javascript';
 
+import { siteConfig } from '@/shared/config/site';
 import { Header } from '@/shared/ui/header';
 import { openGraph, twitter } from '@/shared/util/seo';
 
 import { Providers } from './providers';
 
 export const metadata: Metadata = {
-  title: {
-    template: '%s | WOOKHYUNG.',
-    default: '최형욱 블로그 | WOOKHYUNG.',
-  },
-  description:
-    'A personal collection of thoughts—some about code, some about everything else.',
+  title: siteConfig.title,
+  description: siteConfig.description,
   openGraph: openGraph({
-    title: '최형욱 블로그 | WOOKHYUNG.',
-    description:
-      'A personal collection of thoughts—some about code, some about everything else.',
+    title: siteConfig.title.default,
+    description: siteConfig.description,
   }),
   twitter: twitter({
-    title: '최형욱 블로그 | WOOKHYUNG.',
-    description:
-      'A personal collection of thoughts—some about code, some about everything else.',
+    title: siteConfig.title.default,
+    description: siteConfig.description,
   }),
-  authors: [{ name: 'wookhyung', url: 'https://wookhyung.dev' }],
-  keywords: ['wookhyung', 'wookhyung.dev', 'blog', 'frontend', 'developer'],
-  icons: {
-    icon: [
-      {
-        url: '/favicon-16x16.png',
-        sizes: '16x16',
-      },
-      {
-        url: '/favicon-32x32.png',
-        sizes: '32x32',
-      },
-    ],
-    apple: [
-      {
-        url: '/apple-icon.png',
-        sizes: '180x180',
-      },
-    ],
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  authors: [siteConfig.author],
+  keywords: siteConfig.keywords,
+  icons: siteConfig.icons,
+  robots: siteConfig.robots,
   alternates: {
-    canonical: 'https://wookhyung.dev',
+    canonical: siteConfig.url,
     types: {
-      'application/rss+xml': 'https://wookhyung.dev/rss.xml',
+      'application/rss+xml': `${siteConfig.url}${siteConfig.feeds.rss}`,
     },
   },
   other: {
-    'naver-site-verification': 'b0cbc49b310075ca17a6a6868dd4a9ed0ee4b99d',
+    'naver-site-verification': siteConfig.verification.naver,
   },
 };
 
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: '최형욱 블로그 | WOOKHYUNG.',
-  url: 'https://wookhyung.dev',
-  description:
-    'A personal collection of thoughts—some about code, some about everything else.',
+  name: siteConfig.title.default,
+  url: siteConfig.url,
+  description: siteConfig.description,
 };
 
 const pretendard = localFont({

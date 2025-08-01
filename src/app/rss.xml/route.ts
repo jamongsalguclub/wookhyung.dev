@@ -1,14 +1,15 @@
 import RSS from 'rss';
 
+import { siteConfig } from '@/shared/config/site';
 import { allPosts } from '@/shared/util/post';
 
 export async function GET() {
   const feed = new RSS({
-    title: 'wookhyung.dev',
-    description: 'wookhyung.dev',
-    site_url: 'https://wookhyung.dev',
-    feed_url: 'https://wookhyung.dev/rss.xml',
-    language: 'ko',
+    title: siteConfig.title.default,
+    description: siteConfig.description,
+    site_url: siteConfig.url,
+    feed_url: `${siteConfig.url}${siteConfig.feeds.rss}`,
+    language: siteConfig.language,
     pubDate: new Date(),
   });
 
@@ -16,7 +17,7 @@ export async function GET() {
     feed.item({
       title: post.title,
       description: post.summary,
-      url: `https://wookhyung.dev/blog/${post.slug}`,
+      url: `${siteConfig.url}/blog/${post.slug}`,
       date: post.date,
     });
   }

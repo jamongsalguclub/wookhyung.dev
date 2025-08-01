@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 
+import { siteConfig } from '@/shared/config/site';
 import { EmailIcon } from '@/shared/icon/email-icon';
 import { GithubIcon } from '@/shared/icon/github-icon';
 import { openGraph, twitter } from '@/shared/util/seo';
@@ -8,10 +9,10 @@ import { openGraph, twitter } from '@/shared/util/seo';
 export const metadata: Metadata = {
   title: 'About',
   openGraph: openGraph({
-    title: 'About | WOOKHYUNG.',
+    title: `About | ${siteConfig.siteName}`,
   }),
   twitter: twitter({
-    title: 'About | WOOKHYUNG.',
+    title: `About | ${siteConfig.siteName}`,
   }),
 };
 
@@ -35,7 +36,7 @@ export default function AboutPage() {
 
         <div className="flex space-x-4">
           <a
-            href="https://github.com/wookhyungx"
+            href={siteConfig.social.github}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center w-12 h-12 rounded-full bg-white border border-gray-300 hover:bg-gray-50 transition-colors"
@@ -44,7 +45,7 @@ export default function AboutPage() {
             <GithubIcon className="w-6 h-6" />
           </a>
           <a
-            href="mailto:qpflapffhs76@gmail.com"
+            href={`mailto:${siteConfig.social.email}`}
             className="flex items-center justify-center w-12 h-12 rounded-full bg-white border border-gray-300 hover:bg-gray-50 transition-colors"
             aria-label="Email"
           >
@@ -157,20 +158,20 @@ export default function AboutPage() {
           <ul className="mt-2 space-y-1 list-disc ml-6">
             <li>
               <a
-                href="https://github.com/wookhyungx"
+                href={siteConfig.social.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-600 hover:underline"
               >
-                GitHub: wookhyungx
+                GitHub: {siteConfig.author.name}
               </a>
             </li>
             <li>
               <a
-                href="mailto:qpflapffhs76@gmail.com"
+                href={`mailto:${siteConfig.social.email}`}
                 className="text-blue-600 hover:underline"
               >
-                Email: qpflapffhs76@gmail.com
+                Email: {siteConfig.social.email}
               </a>
             </li>
           </ul>

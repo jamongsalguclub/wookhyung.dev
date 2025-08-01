@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { getMDXComponent } from 'next-contentlayer2/hooks';
 import serialize from 'serialize-javascript';
 
+import { siteConfig } from '@/shared/config/site';
 import { allPosts } from '@/shared/util/post';
 import { openGraph, twitter } from '@/shared/util/seo';
 
@@ -31,7 +32,7 @@ export const generateMetadata = async ({ params }: Props) => {
     title: post.title,
     description: post.summary,
     alternates: {
-      canonical: `https://wookhyung.dev/blog/${slug}`,
+      canonical: `${siteConfig.url}/blog/${slug}`,
     },
     openGraph: openGraph({
       title: post.title,
@@ -55,16 +56,16 @@ export default async function Page({ params }: Props) {
     '@type': 'BlogPosting',
     headline: post.title,
     description: post.summary,
-    url: `https://wookhyung.dev/blog/${slug}`,
+    url: `${siteConfig.url}/blog/${slug}`,
     datePublished: post.date,
     dateModified: post.date,
     author: {
       '@type': 'Person',
-      name: 'wookhyung',
+      name: siteConfig.author.name,
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://wookhyung.dev/blog/${slug}`,
+      '@id': `${siteConfig.url}/blog/${slug}`,
     },
   };
 
