@@ -1,3 +1,4 @@
+import { RssIcon } from 'lucide-react';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 
@@ -50,6 +51,15 @@ export default function AboutPage() {
             aria-label="Email"
           >
             <EmailIcon className="w-6 h-6 text-gray-700" />
+          </a>
+          <a
+            href={siteConfig.feeds.rss}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center w-12 h-12 rounded-full bg-white border border-gray-300 hover:bg-gray-50 transition-colors"
+            aria-label="RSS"
+          >
+            <RssIcon className="w-6 h-6 text-gray-700" />
           </a>
         </div>
       </div>
