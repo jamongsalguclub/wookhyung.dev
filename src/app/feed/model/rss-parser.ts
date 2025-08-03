@@ -19,7 +19,7 @@ export async function parseRssFeed(feed: RssFeed): Promise<ParsedRssItem[]> {
   try {
     const parsedFeed = await parser.parseURL(feed.url);
 
-    return (parsedFeed.items || []).slice(0, 5).map((item) => ({
+    return (parsedFeed.items || []).map((item) => ({
       title: item.title || '제목 없음',
       link: item.link || '',
       pubDate: item.pubDate || '',
@@ -42,12 +42,8 @@ export async function parseAllRssFeeds(
 
   const successfulResults = allItems
     .filter((result) => result.status === 'fulfilled')
-    .flatMap(
-      (result) =>
-        (result as PromiseFulfilledResult<ParsedRssItem[]>).value || [],
-    );
+    .flatMap((result) => result.value || []);
 
-  // 최신 순으로 정렬
   return successfulResults.sort(
     (a, b) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime(),
   );
