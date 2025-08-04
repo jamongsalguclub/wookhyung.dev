@@ -16,4 +16,8 @@ export const RSS_FEEDS: RssFeed[] = [
     name: 'Josh W Comeau',
     url: 'https://www.joshwcomeau.com/rss.xml',
   },
+  {
+    name: 'TKDodo',
+    url: 'https://tkdodo.eu/blog/rss.xml',
+  },
 ];

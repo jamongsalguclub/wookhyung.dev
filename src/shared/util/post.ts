@@ -1,4 +1,4 @@
-import { allNotesPosts,allTechPosts } from 'contentlayer/generated';
+import { allNotesPosts, allTechPosts } from 'contentlayer/generated';
 
 export const allPosts = [...allTechPosts, ...allNotesPosts]
   .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
