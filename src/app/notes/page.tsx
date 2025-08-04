@@ -3,14 +3,14 @@ import Link from 'next/link';
 import serialize from 'serialize-javascript';
 
 import { siteConfig } from '@/shared/config/site';
-import { allPosts } from '@/shared/util/post';
+import { notesPosts } from '@/shared/util/post';
 import { openGraph, twitter } from '@/shared/util/seo';
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'Blog',
-  name: 'Blog',
-  url: `${siteConfig.url}/blog`,
+  '@type': 'Notes',
+  name: 'Notes',
+  url: `${siteConfig.url}/notes`,
   author: {
     '@type': 'Person',
     name: siteConfig.author.name,
@@ -18,21 +18,21 @@ const jsonLd = {
 };
 
 export const metadata: Metadata = {
-  title: 'Blog',
+  title: 'Notes',
   openGraph: openGraph({
-    title: `Blog | ${siteConfig.siteName}`,
+    title: `Notes | ${siteConfig.siteName}`,
   }),
   twitter: twitter({
-    title: `Blog | ${siteConfig.siteName}`,
+    title: `Notes | ${siteConfig.siteName}`,
   }),
 };
 
 export default function Page() {
   return (
     <>
-      {allPosts.map((post) => (
+      {notesPosts.map((post) => (
         <Link
-          href={`/blog/${post.slug}`}
+          href={`/notes/${post.slug}`}
           className="border-b border-gray-200 py-3 px-2 hover:bg-gray-200 flex flex-col gap-2 transition-colors"
           key={post._id}
         >

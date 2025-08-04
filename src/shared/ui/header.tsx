@@ -11,7 +11,8 @@ import { cn } from '@/shared/lib/tailwind-merge';
 
 const navigation = [
   { name: 'Home', href: '/' },
-  { name: 'Blog', href: '/blog' },
+  { name: 'Tech', href: '/tech' },
+  { name: 'Notes', href: '/notes' },
   { name: 'About', href: '/about' },
   { name: 'Feed', href: '/feed' },
 ] as const;
@@ -162,6 +163,7 @@ export const Header = () => {
           <Link
             href="/"
             className="text-xl font-semibold text-gray-900 hover:text-gray-600 transition-colors"
+            onClick={() => setIsMobileMenuOpen(false)}
           >
             <Image
               src="/wookhyung.png"
@@ -244,7 +246,7 @@ export const Header = () => {
                       onClick={() => setIsMobileMenuOpen(false)}
                       className={cn(
                         'block px-4 py-3 text-lg font-medium text-gray-800 hover:text-gray-900 hover:bg-gray-200 rounded-lg transition-colors',
-                        isActive && 'bg-gray-100 text-gray-900',
+                        isActive && 'bg-gray-200 text-gray-900',
                       )}
                     >
                       {item.name}

@@ -14,12 +14,23 @@ export async function GET() {
   });
 
   for (const post of allPosts) {
-    feed.item({
-      title: post.title,
-      description: post.summary,
-      url: `${siteConfig.url}/blog/${post.slug}`,
-      date: post.date,
-    });
+    if (post.category === 'tech') {
+      feed.item({
+        title: post.title,
+        description: post.summary,
+        url: `${siteConfig.url}/tech/${post.slug}`,
+        date: post.date,
+      });
+    }
+
+    if (post.category === 'notes') {
+      feed.item({
+        title: post.title,
+        description: post.summary,
+        url: `${siteConfig.url}/notes/${post.slug}`,
+        date: post.date,
+      });
+    }
   }
 
   return new Response(feed.xml({ indent: true }), {

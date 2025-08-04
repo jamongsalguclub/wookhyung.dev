@@ -4,7 +4,8 @@ import { getMDXComponent } from 'next-contentlayer2/hooks';
 import serialize from 'serialize-javascript';
 
 import { siteConfig } from '@/shared/config/site';
-import { allPosts } from '@/shared/util/post';
+import { BackButton } from '@/shared/ui/back-button';
+import { techPosts } from '@/shared/util/post';
 import { openGraph, twitter } from '@/shared/util/seo';
 
 import { Comments } from './ui/comments';
@@ -18,11 +19,11 @@ interface Props {
 }
 
 export const generateStaticParams = () =>
-  allPosts.map((post) => ({ slug: post._raw.flattenedPath }));
+  techPosts.map((post) => ({ slug: post.slug }));
 
 export const generateMetadata = async ({ params }: Props) => {
   const { slug } = await params;
-  const post = allPosts.find((post) => post._raw.flattenedPath === slug);
+  const post = techPosts.find((post) => post.slug === slug);
 
   if (!post) {
     throw new Error(`Post not found for slug: ${slug}`);
@@ -32,7 +33,7 @@ export const generateMetadata = async ({ params }: Props) => {
     title: post.title,
     description: post.summary,
     alternates: {
-      canonical: `${siteConfig.url}/blog/${slug}`,
+      canonical: `${siteConfig.url}/tech/${slug}`,
     },
     openGraph: openGraph({
       title: post.title,
@@ -45,7 +46,7 @@ export const generateMetadata = async ({ params }: Props) => {
 
 export default async function Page({ params }: Props) {
   const { slug } = await params;
-  const post = allPosts.find((post) => post._raw.flattenedPath === slug);
+  const post = techPosts.find((post) => post.slug === slug);
 
   if (!post) {
     notFound();
@@ -56,7 +57,7 @@ export default async function Page({ params }: Props) {
     '@type': 'BlogPosting',
     headline: post.title,
     description: post.summary,
-    url: `${siteConfig.url}/blog/${slug}`,
+    url: `${siteConfig.url}/tech/${slug}`,
     datePublished: post.date,
     dateModified: post.date,
     author: {
@@ -65,7 +66,7 @@ export default async function Page({ params }: Props) {
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `${siteConfig.url}/blog/${slug}`,
+      '@id': `${siteConfig.url}/tech/${slug}`,
     },
   };
 
@@ -75,6 +76,7 @@ export default async function Page({ params }: Props) {
     <>
       <div className="flex flex-col gap-6 pb-40 font-pretendard">
         <ProgressBar />
+        <BackButton className="self-start" />
         <article className="py-6 prose max-w-none break-words">
           <h1>{post.title}</h1>
           {post.summary && (

@@ -1,11 +1,21 @@
 import type { MetadataRoute } from 'next';
 
 import { siteConfig } from '@/shared/config/site';
-import { allPosts } from '@/shared/util/post';
+import {
+  notesPosts as notesPostsData,
+  techPosts as techPostsData,
+} from '@/shared/util/post';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const posts = allPosts.map((post) => ({
-    url: `${siteConfig.url}/blog/${post.slug}`,
+  const techPosts = techPostsData.map((post) => ({
+    url: `${siteConfig.url}/tech/${post.slug}`,
+    lastModified: post.date,
+    changeFrequency: 'daily' as const,
+    priority: 0.7,
+  }));
+
+  const notesPosts = notesPostsData.map((post) => ({
+    url: `${siteConfig.url}/notes/${post.slug}`,
     lastModified: post.date,
     changeFrequency: 'daily' as const,
     priority: 0.7,
@@ -25,11 +35,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${siteConfig.url}/blog`,
+      url: `${siteConfig.url}/tech`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.5,
     },
-    ...posts,
+    ...techPosts,
+    ...notesPosts,
   ];
 }
