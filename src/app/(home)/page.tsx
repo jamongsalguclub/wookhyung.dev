@@ -57,7 +57,7 @@ export default function Page() {
         }}
       >
         <HyperText duration={HYPER_TEXT_DURATION} startOnView>
-          wookhyung.
+          wookhyung
         </HyperText>
       </motion.div>
       <AnimatePresence>

@@ -1,10 +1,10 @@
 export const siteConfig = {
   name: 'wookhyung.dev',
-  siteName: 'WOOKHYUNG.',
+  siteName: 'WOOKHYUNG',
   url: 'https://wookhyung.dev',
   title: {
-    default: '최형욱 블로그 | WOOKHYUNG.',
-    template: '%s | WOOKHYUNG.',
+    default: '최형욱 블로그 | WOOKHYUNG',
+    template: '%s | WOOKHYUNG',
   },
   description: '프론트엔드 개발과 개인적인 생각을 기록합니다.',
   author: {
