@@ -6,8 +6,7 @@ export const siteConfig = {
     default: '최형욱 블로그 | WOOKHYUNG.',
     template: '%s | WOOKHYUNG.',
   },
-  description:
-    'A personal collection of thoughts—some about code, some about everything else.',
+  description: '프론트엔드 개발과 개인적인 생각을 기록합니다.',
   author: {
     name: 'wookhyung',
     url: 'https://wookhyung.dev',
