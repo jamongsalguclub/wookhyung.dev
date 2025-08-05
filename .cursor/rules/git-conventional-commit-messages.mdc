@@ -14,6 +14,8 @@ The commit message should be structured as follows:
 [optional footer(s)]
 ```
 
+commit messages must be written in Korean.
+
 ---
 
 The commit contains the following structural elements, to communicate intent to the consumers of your library:
