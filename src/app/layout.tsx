@@ -13,6 +13,7 @@ import { openGraph, twitter } from '@/shared/util/seo';
 import { Providers } from './providers';
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: siteConfig.title,
   description: siteConfig.description,
   openGraph: openGraph({
