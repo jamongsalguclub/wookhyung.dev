@@ -9,6 +9,9 @@ import { openGraph, twitter } from '@/shared/util/seo';
 
 export const metadata: Metadata = {
   title: 'About',
+  alternates: {
+    canonical: `${siteConfig.url}/about`,
+  },
   openGraph: openGraph({
     title: `About | ${siteConfig.siteName}`,
   }),

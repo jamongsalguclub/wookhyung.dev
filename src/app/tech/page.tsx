@@ -20,6 +20,9 @@ const jsonLd = {
 
 export const metadata: Metadata = {
   title: 'Tech',
+  alternates: {
+    canonical: `${siteConfig.url}/tech`,
+  },
   openGraph: openGraph({
     title: `Tech | ${siteConfig.siteName}`,
   }),

@@ -12,6 +12,9 @@ import { openGraph, twitter } from '@/shared/util/seo';
 
 export const metadata: Metadata = {
   title: 'Preference',
+  alternates: {
+    canonical: `${siteConfig.url}/preference`,
+  },
   openGraph: openGraph({
     title: `Preference | ${siteConfig.siteName}`,
   }),

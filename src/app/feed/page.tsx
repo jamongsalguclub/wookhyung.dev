@@ -13,6 +13,9 @@ export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: 'Feed | WOOKHYUNG.',
+  alternates: {
+    canonical: `${siteConfig.url}/feed`,
+  },
   openGraph: openGraph({
     title: `Feed | ${siteConfig.siteName}`,
   }),
