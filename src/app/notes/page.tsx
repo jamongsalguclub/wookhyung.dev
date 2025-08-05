@@ -33,7 +33,7 @@ export default function Page() {
       <div>
         <h1 className="text-2xl font-bold text-gray-900 mb-6">Notes</h1>
 
-        <div className="space-y-1">
+        <div>
           {notesPosts.map((post) => (
             <Link
               href={`/notes/${post.slug}`}
