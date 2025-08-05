@@ -32,7 +32,10 @@ const navigation: NavigationItem[] = [
   },
   {
     name: 'Personal',
-    subItems: [{ name: 'Notes', href: '/notes' }],
+    subItems: [
+      { name: 'Notes', href: '/notes' },
+      { name: 'Preference', href: '/preference' },
+    ],
   },
   { name: 'About', href: '/about' },
 ] as const;
