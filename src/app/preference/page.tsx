@@ -25,14 +25,14 @@ export default function PreferencePage() {
     <div className="min-h-screen font-pretendard pb-12">
       <div className="max-w-2xl mx-auto space-y-8">
         <div className="text-center mb-12">
-          <h1 className="text-3xl font-bold text-gray-900">취향</h1>
+          <h1 className="text-3xl font-bold text-gray-900">Preference</h1>
         </div>
 
         <section>
           <div className="mb-6">
-            <h2 className="text-xl font-bold text-gray-900 mb-4">음악</h2>
+            <h2 className="text-xl font-bold text-gray-900 mb-4">Music</h2>
             <h3 className="text-base font-semibold text-gray-900 mb-4">
-              플레이리스트
+              Playlist
             </h3>
             <ul className="list-disc ml-6 space-y-2">
               {PLAYLISTS.map((playlist) => (
@@ -52,7 +52,7 @@ export default function PreferencePage() {
           </div>
           <div className="mb-6">
             <h3 className="text-base font-semibold text-gray-900 mb-4">
-              콘서트
+              Concert
             </h3>
             <ul className="list-disc ml-6 space-y-2">
               {CONCERTS.map((concert) => (
@@ -73,7 +73,7 @@ export default function PreferencePage() {
         </section>
 
         <section>
-          <h2 className="text-xl font-bold text-gray-900 mb-4">책</h2>
+          <h2 className="text-xl font-bold text-gray-900 mb-4">Book</h2>
           {Object.entries(BOOKS_BY_YEAR)
             .sort(([a], [b]) => Number(b) - Number(a))
             .map(([year, books]) => (
@@ -101,14 +101,14 @@ export default function PreferencePage() {
         </section>
 
         <section>
-          <h2 className="text-xl font-bold text-gray-900 mb-4">영화</h2>
+          <h2 className="text-xl font-bold text-gray-900 mb-4">Movie</h2>
           <ul className="list-disc ml-6 space-y-2">
             <li className="text-gray-700">...</li>
           </ul>
         </section>
 
         <section>
-          <h2 className="text-xl font-bold text-gray-900 mb-4">관심사</h2>
+          <h2 className="text-xl font-bold text-gray-900 mb-4">Interest</h2>
           <ul className="list-disc ml-6 space-y-2">
             {INTERESTS.map((interest) => (
               <li className="text-gray-700" key={interest.title}>

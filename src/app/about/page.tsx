@@ -66,14 +66,14 @@ export default function AboutPage() {
 
       <div className="max-w-2xl mx-auto space-y-8">
         <section>
-          <h2 className="text-xl font-bold text-gray-900 mb-4">경력</h2>
+          <h2 className="text-xl font-bold text-gray-900 mb-4">Experience</h2>
           <ul className="list-disc ml-6 space-y-2">
             <li className="text-gray-700">프론트엔드 개발자 (22.12 - 현재)</li>
           </ul>
         </section>
 
         <section>
-          <h2 className="text-xl font-bold text-gray-900 mb-4">기술스택</h2>
+          <h2 className="text-xl font-bold text-gray-900 mb-4">Tech Stack</h2>
           <ul className="list-disc ml-6 space-y-2">
             <li className="text-gray-700">
               TypeScript, React, TanStack Router(Start), Next.js
@@ -83,7 +83,7 @@ export default function AboutPage() {
 
         <section>
           <h2 className="text-xl font-bold text-gray-900 mb-4">
-            오픈소스 기여
+            Open Source Contribution
           </h2>
           <h3 className="text-base font-bold text-gray-900 mb-4">
             <a
@@ -129,7 +129,7 @@ export default function AboutPage() {
         </section>
 
         <section>
-          <h2 className="text-xl font-bold text-gray-900 mb-4">프로젝트</h2>
+          <h2 className="text-xl font-bold text-gray-900 mb-4">Projects</h2>
           <ul className="list-disc ml-6 space-y-2">
             {[
               {
@@ -164,7 +164,7 @@ export default function AboutPage() {
         </section>
 
         <section>
-          <h2 className="text-xl font-bold text-gray-900 mb-4">연락처</h2>
+          <h2 className="text-xl font-bold text-gray-900 mb-4">Contact</h2>
           <ul className="mt-2 space-y-1 list-disc ml-6">
             <li>
               <a
