@@ -30,23 +30,29 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      {techPosts.map((post) => (
-        <Link
-          href={`/tech/${post.slug}`}
-          className="border-b border-gray-200 py-3 px-2 hover:bg-gray-200 flex flex-col gap-2 transition-colors"
-          key={post._id}
-        >
-          <h2 className="text-lg font-bold">{post.title}</h2>
-          <p className="text-sm text-gray-500 mb-2">{post.summary}</p>
-          <p className="text-xs text-gray-500">
-            {new Date(post.date).toLocaleDateString('ko-KR', {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric',
-            })}
-          </p>
-        </Link>
-      ))}
+      <div>
+        <h1 className="text-2xl font-bold text-gray-900 mb-6">Tech</h1>
+
+        <div className="space-y-1">
+          {techPosts.map((post) => (
+            <Link
+              href={`/tech/${post.slug}`}
+              className="border-b border-gray-200 py-3 px-2 hover:bg-gray-200 flex flex-col gap-2 transition-colors"
+              key={post._id}
+            >
+              <h2 className="text-lg font-bold">{post.title}</h2>
+              <p className="text-sm text-gray-500 mb-2">{post.summary}</p>
+              <p className="text-xs text-gray-500">
+                {new Date(post.date).toLocaleDateString('ko-KR', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                })}
+              </p>
+            </Link>
+          ))}
+        </div>
+      </div>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: serialize(jsonLd) }}
