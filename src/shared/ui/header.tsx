@@ -1,20 +1,40 @@
 'use client';
 
+import { ChevronDown } from 'lucide-react';
 import type { Variants } from 'motion/react';
 import * as motion from 'motion/react-client';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { cn } from '@/shared/lib/tailwind-merge';
 
-const navigation = [
+interface SubMenuItem {
+  name: string;
+  href: string;
+}
+
+interface NavigationItem {
+  name: string;
+  href?: string;
+  subItems?: SubMenuItem[];
+}
+
+const navigation: NavigationItem[] = [
   { name: 'Home', href: '/' },
-  { name: 'Tech', href: '/tech' },
-  { name: 'Notes', href: '/notes' },
+  {
+    name: 'Dev',
+    subItems: [
+      { name: 'Tech', href: '/tech' },
+      { name: 'Feed', href: '/feed' },
+    ],
+  },
+  {
+    name: 'Personal',
+    subItems: [{ name: 'Notes', href: '/notes' }],
+  },
   { name: 'About', href: '/about' },
-  { name: 'Feed', href: '/feed' },
 ] as const;
 
 const sidebarVariants: Variants = {
@@ -136,12 +156,97 @@ const MenuToggle = ({ toggle }: { toggle: () => void }) => (
   </button>
 );
 
+// 드롭다운 컴포넌트
+const DropdownMenu = ({
+  item,
+  pathname,
+}: {
+  item: NavigationItem;
+  pathname: string;
+}) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setIsOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setIsOpen(false);
+    }, 100);
+  };
+
+  const isAnySubItemActive = item.subItems?.some(
+    (subItem) =>
+      pathname === subItem.href || pathname.startsWith(`${subItem.href}/`),
+  );
+
+  return (
+    <div
+      className="relative"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <button
+        className={cn(
+          'text-sm font-medium transition-colors text-gray-800 hover:text-gray-900 flex items-center gap-1',
+          isAnySubItemActive &&
+            'underline underline-offset-4 decoration-gray-800 decoration-2',
+        )}
+        aria-expanded={isOpen}
+      >
+        {item.name}
+        <ChevronDown
+          className={cn(
+            'w-4 h-4 transition-transform duration-300',
+            isOpen && 'rotate-180',
+          )}
+        />
+      </button>
+
+      {isOpen && item.subItems && (
+        <div className="absolute top-full left-0 mt-1 py-2 bg-white border border-gray-200 rounded-md shadow-lg min-w-[120px] z-50">
+          {item.subItems.map((subItem) => {
+            const isSubItemActive =
+              pathname === subItem.href ||
+              pathname.startsWith(`${subItem.href}/`);
+            return (
+              <Link
+                key={subItem.name}
+                href={subItem.href}
+                className={cn(
+                  'block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors',
+                  isSubItemActive && 'bg-gray-100 text-gray-900 font-medium',
+                )}
+              >
+                {subItem.name}
+              </Link>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+};
+
 export const Header = () => {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(
+    null,
+  );
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+    setOpenMobileDropdown(null);
+  };
+
+  const toggleMobileDropdown = (itemName: string) => {
+    setOpenMobileDropdown(openMobileDropdown === itemName ? null : itemName);
   };
 
   useEffect(() => {
@@ -175,13 +280,23 @@ export const Header = () => {
 
           <div className="hidden md:flex items-center space-x-8">
             {navigation.map((item) => {
+              if (item.subItems) {
+                return (
+                  <DropdownMenu
+                    key={item.name}
+                    item={item}
+                    pathname={pathname}
+                  />
+                );
+              }
+
               const isActive =
                 pathname === item.href || pathname.startsWith(`${item.href}/`);
 
               return (
                 <Link
                   key={item.name}
-                  href={item.href}
+                  href={item.href!}
                   className={cn(
                     'text-sm font-medium transition-colors text-gray-800 hover:text-gray-900',
                     isActive &&
@@ -235,6 +350,59 @@ export const Header = () => {
 
             <motion.div className="px-6 py-4 space-y-1" variants={menuVariants}>
               {navigation.map((item) => {
+                if (item.subItems) {
+                  const isAnySubItemActive = item.subItems.some(
+                    (subItem) =>
+                      pathname === subItem.href ||
+                      pathname.startsWith(`${subItem.href}/`),
+                  );
+                  const isDropdownOpen = openMobileDropdown === item.name;
+
+                  return (
+                    <motion.div key={item.name} variants={itemVariants}>
+                      <button
+                        onClick={() => toggleMobileDropdown(item.name)}
+                        className={cn(
+                          'w-full flex items-center justify-between px-4 py-3 text-lg font-medium text-gray-800 hover:text-gray-900 hover:bg-gray-200 rounded-lg transition-colors',
+                          isAnySubItemActive && 'bg-gray-200 text-gray-900',
+                        )}
+                      >
+                        {item.name}
+                        <ChevronDown
+                          className={cn(
+                            'w-5 h-5 transition-transform duration-300',
+                            isDropdownOpen && 'rotate-180',
+                          )}
+                        />
+                      </button>
+
+                      {isDropdownOpen && (
+                        <div className="ml-4 mt-1 space-y-1">
+                          {item.subItems.map((subItem) => {
+                            const isSubItemActive =
+                              pathname === subItem.href ||
+                              pathname.startsWith(`${subItem.href}/`);
+                            return (
+                              <Link
+                                key={subItem.name}
+                                href={subItem.href}
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className={cn(
+                                  'block px-4 py-2 text-base text-gray-700 hover:text-gray-900 hover:bg-gray-200 rounded-lg transition-colors',
+                                  isSubItemActive &&
+                                    'bg-gray-200 text-gray-900 font-medium',
+                                )}
+                              >
+                                {subItem.name}
+                              </Link>
+                            );
+                          })}
+                        </div>
+                      )}
+                    </motion.div>
+                  );
+                }
+
                 const isActive =
                   pathname === item.href ||
                   pathname.startsWith(`${item.href}/`);
@@ -242,7 +410,7 @@ export const Header = () => {
                 return (
                   <motion.div key={item.name} variants={itemVariants}>
                     <Link
-                      href={item.href}
+                      href={item.href!}
                       onClick={() => setIsMobileMenuOpen(false)}
                       className={cn(
                         'block px-4 py-3 text-lg font-medium text-gray-800 hover:text-gray-900 hover:bg-gray-200 rounded-lg transition-colors',
