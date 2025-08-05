@@ -69,7 +69,7 @@ export const siteConfig = {
     rss: '/rss.xml',
   },
   github: {
-    repo: 'jamongsalguclub/wookhyung.',
+    repo: 'jamongsalguclub/wookhyung.dev',
     repoId: 'R_kgDOPIIAEQ',
     category: 'Comments',
     categoryId: 'DIC_kwDOPIIAEc4CtkB_',

@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react';
 import { cn } from '@/shared/lib/tailwind-merge';
 
 const navigation = [
+  { name: 'Home', href: '/' },
   { name: 'Tech', href: '/tech' },
   { name: 'Notes', href: '/notes' },
   { name: 'About', href: '/about' },
