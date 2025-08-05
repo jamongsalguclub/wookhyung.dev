@@ -1,3 +1,4 @@
+import { ExternalLink } from 'lucide-react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import serialize from 'serialize-javascript';
@@ -51,6 +52,18 @@ export default function Page() {
               </p>
             </Link>
           ))}
+        </div>
+
+        <div className="mt-6 text-end">
+          <a
+            href="https://velog.io/@ctdlog/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:underline inline-flex items-center gap-1 text-sm"
+          >
+            이전 블로그 보기
+            <ExternalLink className="w-3 h-3" />
+          </a>
         </div>
       </div>
       <script
