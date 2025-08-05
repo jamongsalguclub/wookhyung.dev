@@ -134,12 +134,12 @@ export default function AboutPage() {
             {[
               {
                 title: 'wookhyung.dev',
-                link: 'https://github.com/wookhyungx/wookhyung.dev',
+                link: 'https://github.com/jamongsalguclub/wookhyung.dev',
                 description: '개인 블로그, 25.07 - 현재',
               },
               {
                 title: 'Google Chat Webhook Action',
-                link: 'https://github.com/wookhyungx/google-chat-webhook-action',
+                link: 'https://github.com/jamongsalguclub/google-chat-webhook-action',
                 description: 'GitHub Action for Google Chat, 25.06 - 25.07',
               },
               {
