@@ -17,7 +17,7 @@ export async function GET() {
     if (post.category === 'tech') {
       feed.item({
         title: post.title,
-        description: post.body.code,
+        description: post.summary,
         url: `${siteConfig.url}/tech/${post.slug}`,
         date: post.date,
       });
