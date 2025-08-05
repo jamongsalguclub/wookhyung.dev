@@ -1,3 +1,5 @@
+import { format } from 'date-fns';
+import { ko } from 'date-fns/locale';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getMDXComponent } from 'next-contentlayer2/hooks';
@@ -82,6 +84,14 @@ export default async function Page({ params }: Props) {
           {post.summary && (
             <p className="text-xl mt-0 text-slate-700">{post.summary}</p>
           )}
+          <div className="flex items-center gap-2 mt-2 mb-4 not-prose">
+            <time
+              dateTime={post.date}
+              className="text-sm text-gray-500 font-medium"
+            >
+              {format(new Date(post.date), 'yyyy년 M월 d일', { locale: ko })}
+            </time>
+          </div>
           <hr />
           <Content
             components={{
