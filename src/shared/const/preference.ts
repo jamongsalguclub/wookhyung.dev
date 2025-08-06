@@ -18,11 +18,11 @@ export interface Book {
 export const PLAYLISTS: Link[] = [
   {
     title: '자몽살구클럽 - 한로로',
-    link: 'https://vibe.naver.com/album/34693209',
+    link: 'https://open.spotify.com/album/2DV7iVJ7L5DRQijgjyqLyQ',
   },
   {
     title: 'play with earth! 0.03 - wave to earth',
-    link: 'https://vibe.naver.com/album/32081830',
+    link: 'https://open.spotify.com/album/527e8WrlMvJBEmlmt7kJCj',
   },
 ];
 
