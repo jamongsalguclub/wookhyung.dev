@@ -36,6 +36,10 @@ export const CONCERTS: Link[] = [
     link: 'https://ticket.melon.com/performance/index.htm?prodId=209915',
   },
   {
+    title: '2024 실리카겔 단독공연 〈Syn.THE.Size Ⅲ〉',
+    link: 'https://tickets.interpark.com/goods/24004957',
+  },
+  {
     title: '2024 윤하 20주년 기념 콘서트 〈스물〉',
     link: 'https://tickets.interpark.com/goods/23018640',
   },
