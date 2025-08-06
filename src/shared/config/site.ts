@@ -22,6 +22,11 @@ export const siteConfig = {
   icons: {
     icon: [
       {
+        url: '/favicon.ico',
+        sizes: '48x48',
+        type: 'image/x-icon',
+      },
+      {
         url: '/favicon-16x16.png',
         sizes: '16x16',
       },
