@@ -62,6 +62,10 @@ export const siteConfig = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
   },
   theme: {
     color: '#f3f4f6',
