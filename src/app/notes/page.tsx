@@ -3,6 +3,7 @@ import Link from 'next/link';
 import serialize from 'serialize-javascript';
 
 import { siteConfig } from '@/shared/config/site';
+import { PageTitle } from '@/shared/ui/page-title';
 import { notesPosts } from '@/shared/util/post';
 import { openGraph, twitter } from '@/shared/util/seo';
 
@@ -34,7 +35,7 @@ export default function Page() {
   return (
     <>
       <div>
-        <h1 className="text-2xl font-bold text-gray-900 mb-6">Notes</h1>
+        <PageTitle title="Notes" />
 
         <div>
           {notesPosts.map((post) => (

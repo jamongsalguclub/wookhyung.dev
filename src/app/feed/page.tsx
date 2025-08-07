@@ -4,6 +4,7 @@ import { ExternalLink } from 'lucide-react';
 import type { Metadata } from 'next';
 
 import { siteConfig } from '@/shared/config/site';
+import { PageTitle } from '@/shared/ui/page-title';
 import { openGraph, twitter } from '@/shared/util/seo';
 
 import { RSS_FEEDS } from './config/rss-feeds';
@@ -29,7 +30,7 @@ export default async function FeedPage() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-gray-900 mb-6">Feed (Beta ⚠️)</h1>
+      <PageTitle title="Feed (Beta ⚠️)" />
 
       <div className="space-y-6">
         {rssItems.map((item, index) => (

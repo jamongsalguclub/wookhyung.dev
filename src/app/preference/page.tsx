@@ -8,6 +8,7 @@ import {
   PLAYLISTS,
 } from '@/app/preference/const/preference';
 import { siteConfig } from '@/shared/config/site';
+import { PageTitle } from '@/shared/ui/page-title';
 import { openGraph, twitter } from '@/shared/util/seo';
 
 export const metadata: Metadata = {
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
 export default function PreferencePage() {
   return (
     <div className="pb-12 space-y-8">
-      <h1 className="text-2xl font-bold text-gray-900 mb-6">Preference</h1>
+      <PageTitle title="Preference" />
 
       <section>
         <div className="mb-6">

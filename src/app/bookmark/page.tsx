@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 import { siteConfig } from '@/shared/config/site';
+import { PageTitle } from '@/shared/ui/page-title';
 import { openGraph, twitter } from '@/shared/util/seo';
 
 export const BOOKMARKS = [
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
 export default function BookmarkPage() {
   return (
     <div className="pb-12 space-y-8">
-      <h1 className="text-2xl font-bold text-gray-900 mb-6">Bookmark</h1>
+      <PageTitle title="Bookmark" />
 
       <section>
         <h2 className="text-xl font-bold text-gray-900 mb-4">Web</h2>
