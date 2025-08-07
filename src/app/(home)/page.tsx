@@ -48,7 +48,7 @@ export default function Page() {
   }, [showTime]);
 
   return (
-    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg flex-1">
+    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg flex-1 font-mono">
       <motion.div
         animate={showTime ? { y: -12 } : { y: 0 }}
         transition={{

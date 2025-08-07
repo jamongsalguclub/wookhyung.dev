@@ -76,7 +76,7 @@ export default async function Page({ params }: Props) {
 
   return (
     <>
-      <div className="flex flex-col gap-6 pb-40 font-pretendard">
+      <div className="flex flex-col gap-6 pb-40">
         <ProgressBar />
         <BackButton className="self-start" />
         <article className="py-6 prose max-w-none break-words">

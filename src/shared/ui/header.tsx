@@ -28,6 +28,7 @@ const navigation: NavigationItem[] = [
     subItems: [
       { name: 'Tech', href: '/tech' },
       { name: 'Feed', href: '/feed' },
+      { name: 'Bookmark', href: '/bookmark' },
     ],
   },
   {

@@ -61,7 +61,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko" className={pretendard.variable} suppressHydrationWarning>
-      <body className="font-mono max-w-3xl mx-auto min-h-dvh flex flex-col bg-gray-100">
+      <body className="font-pretendard max-w-3xl mx-auto min-h-dvh flex flex-col bg-gray-100">
         <Providers>
           <Header />
           <main className="flex-1 flex flex-col py-6 px-4">{children}</main>
