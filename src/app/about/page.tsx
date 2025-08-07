@@ -167,6 +167,77 @@ export default function AboutPage() {
         </section>
 
         <section>
+          <h2 className="text-xl font-bold text-gray-900 mb-4">Study</h2>
+          <div className="mb-4">
+            <h3 className="text-base font-bold text-gray-900 mb-4">
+              <a
+                href="https://github.com/frontend-book-study/frontend-log"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:underline"
+              >
+                Frontend Book Study
+              </a>
+            </h3>
+            <ul className="list-disc ml-6 space-y-2">
+              <li className="text-gray-700">
+                모던 리액트 Deep Dive 완독 스터디
+              </li>
+              <li className="text-gray-700">
+                우아한 타입스크립트 with 리액트 스터디
+              </li>
+              <li className="text-gray-700">리팩터링 2판 스터디</li>
+            </ul>
+          </div>
+          <div className="mb-4">
+            <h3 className="text-base font-bold text-gray-900 mb-4">
+              <a
+                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:underline"
+              >
+                월간 CS 스터디
+              </a>
+            </h3>
+            <ul className="list-disc ml-6 space-y-2">
+              <li className="text-gray-700">
+                <a
+                  href="https://github.com/monthly-cs/2024-05-effective-typescript"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:underline"
+                >
+                  이펙티브 타입스크립트 스터디
+                </a>
+              </li>
+              <li className="text-gray-700">
+                <a
+                  href="https://github.com/monthly-cs/2024-07-modern-javascript-deep-dive"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:underline"
+                >
+                  모던 자바스크립트 Deep Dive 스터디
+                </a>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-gray-900 mb-4">Education</h2>
+          <ul className="list-disc ml-6 space-y-2">
+            <li className="text-gray-700">
+              방송통신대학교 컴퓨터과학과 (25년 2학기 입학 예정)
+            </li>
+            <li className="text-gray-700">
+              엘리스 SW 엔지니어 트랙 (22.04 - 22.07)
+            </li>
+          </ul>
+        </section>
+
+        <section>
           <h2 className="text-xl font-bold text-gray-900 mb-4">Contact</h2>
           <ul className="mt-2 space-y-1 list-disc ml-6">
             <li>
