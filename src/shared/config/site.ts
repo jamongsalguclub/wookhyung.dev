@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: 'wookhyung.dev',
   siteName: 'WOOKHYUNG',
-  url: 'https://wookhyung.dev',
+  url: 'https://www.wookhyung.dev',
   title: {
     default: 'WOOKHYUNG',
     template: '%s | WOOKHYUNG',
@@ -9,7 +9,7 @@ export const siteConfig = {
   description: '프론트엔드 개발과 개인적인 생각을 기록합니다.',
   author: {
     name: 'wookhyung',
-    url: 'https://wookhyung.dev',
+    url: 'https://www.wookhyung.dev',
     email: 'qpflapffhs76@gmail.com',
   },
   keywords: ['wookhyung', 'wookhyung.dev', 'blog', 'frontend', 'developer'],
