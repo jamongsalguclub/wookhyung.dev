@@ -4,13 +4,6 @@ import { siteConfig } from '@/shared/config/site';
 import { PageTitle } from '@/shared/ui/page-title';
 import { openGraph, twitter } from '@/shared/util/seo';
 
-export const BOOKMARKS = [
-  {
-    title: '모던 자바스크립트 Deep Dive',
-    link: 'https://www.yes24.com/Product/Goods/124855097',
-  },
-];
-
 export const metadata: Metadata = {
   title: 'Bookmark',
   alternates: {
