@@ -13,7 +13,7 @@ import { parseAllRssFeeds } from './model/rss-parser';
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: 'Feed | WOOKHYUNG.',
+  title: 'Feed',
   alternates: {
     canonical: `${siteConfig.url}/feed`,
   },
