@@ -4,6 +4,7 @@ import Link from 'next/link';
 import serialize from 'serialize-javascript';
 
 import { siteConfig } from '@/shared/config/site';
+import { DottedDivider } from '@/shared/ui/dotted-divider';
 import { PageTitle } from '@/shared/ui/page-title';
 import { techPosts } from '@/shared/util/post';
 import { openGraph, twitter } from '@/shared/util/seo';
@@ -39,22 +40,24 @@ export default function Page() {
         <PageTitle title="Tech" />
 
         <div>
-          {techPosts.map((post) => (
-            <Link
-              href={`/tech/${post.slug}`}
-              className="border-b border-gray-200 py-3 px-2 hover:bg-gray-200 flex flex-col gap-2 transition-colors"
-              key={post._id}
-            >
-              <h2 className="text-lg font-bold">{post.title}</h2>
-              <p className="text-sm text-gray-500 mb-2">{post.summary}</p>
-              <p className="text-xs text-gray-500">
-                {new Date(post.date).toLocaleDateString('ko-KR', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric',
-                })}
-              </p>
-            </Link>
+          {techPosts.map((post, index) => (
+            <div key={post._id}>
+              <Link
+                href={`/tech/${post.slug}`}
+                className="py-3 px-2 hover:bg-gray-200 flex flex-col gap-2 transition-colors"
+              >
+                <h2 className="text-lg font-bold">{post.title}</h2>
+                <p className="text-sm text-gray-500 mb-2">{post.summary}</p>
+                <p className="text-xs text-gray-500">
+                  {new Date(post.date).toLocaleDateString('ko-KR', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                  })}
+                </p>
+              </Link>
+              {index < techPosts.length - 1 && <DottedDivider />}
+            </div>
           ))}
         </div>
 

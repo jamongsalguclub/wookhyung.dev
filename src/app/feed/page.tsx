@@ -4,6 +4,7 @@ import { ExternalLink } from 'lucide-react';
 import type { Metadata } from 'next';
 
 import { siteConfig } from '@/shared/config/site';
+import { DottedCard } from '@/shared/ui/dotted-card';
 import { PageTitle } from '@/shared/ui/page-title';
 import { openGraph, twitter } from '@/shared/util/seo';
 
@@ -34,46 +35,49 @@ export default async function FeedPage() {
 
       <div className="space-y-6">
         {rssItems.map((item, index) => (
-          <article
+          <DottedCard
             key={`${item.feedUrl}-${index}`}
-            className="p-6 bg-white border border-gray-200 rounded-lg hover:shadow-md transition-shadow"
+            className="hover:shadow-md transition-shadow"
+            contentClassName="p-6"
           >
-            <div className="flex items-start justify-between mb-3">
-              <div className="flex items-center space-x-2">
-                <span className="font-medium text-sm text-blue-600">
-                  {item.feedName}
-                </span>
+            <article>
+              <div className="flex items-start justify-between mb-3">
+                <div className="flex items-center space-x-2">
+                  <span className="font-medium text-sm text-blue-600">
+                    {item.feedName}
+                  </span>
+                </div>
+                <time className="text-sm text-gray-500">
+                  {format(new Date(item.pubDate), 'yyyy년 MM월 dd일', {
+                    locale: ko,
+                  })}
+                </time>
               </div>
-              <time className="text-sm text-gray-500">
-                {format(new Date(item.pubDate), 'yyyy년 MM월 dd일', {
-                  locale: ko,
-                })}
-              </time>
-            </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                <a
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-blue-600 transition-colors"
+                >
+                  {item.title}
+                </a>
+              </h3>
+              {item.contentSnippet && (
+                <p className="text-gray-600 text-sm mb-3 line-clamp-3">
+                  {item.contentSnippet}
+                </p>
+              )}
               <a
                 href={item.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-blue-600 transition-colors"
+                className="inline-flex items-center text-sm text-blue-600 hover:underline"
               >
-                {item.title}
+                전체 글 읽기 <ExternalLink className="w-3 h-3 ml-1" />
               </a>
-            </h3>
-            {item.contentSnippet && (
-              <p className="text-gray-600 text-sm mb-3 line-clamp-3">
-                {item.contentSnippet}
-              </p>
-            )}
-            <a
-              href={item.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center text-sm text-blue-600 hover:underline"
-            >
-              전체 글 읽기 <ExternalLink className="w-3 h-3 ml-1" />
-            </a>
-          </article>
+            </article>
+          </DottedCard>
         ))}
       </div>
     </div>

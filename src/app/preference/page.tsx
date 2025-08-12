@@ -1,4 +1,3 @@
-import { ExternalLink } from 'lucide-react';
 import type { Metadata } from 'next';
 
 import {
@@ -64,7 +63,6 @@ export default function PreferencePage() {
                   className="text-blue-600 hover:underline inline-flex items-center gap-1"
                 >
                   {concert.title}
-                  <ExternalLink className="w-3 h-3" />
                 </a>
               </li>
             ))}
@@ -91,7 +89,6 @@ export default function PreferencePage() {
                       className="text-blue-600 hover:underline inline-flex items-center gap-1"
                     >
                       {book.title} ({book.author})
-                      <ExternalLink className="w-3 h-3" />
                     </a>
                   </li>
                 ))}
