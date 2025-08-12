@@ -3,7 +3,6 @@ import './globals.css';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { Analytics } from '@vercel/analytics/next';
 import type { Metadata } from 'next';
-import localFont from 'next/font/local';
 import serialize from 'serialize-javascript';
 
 import { siteConfig } from '@/shared/config/site';
@@ -47,21 +46,14 @@ const jsonLd = {
   description: siteConfig.description,
 };
 
-const pretendard = localFont({
-  src: '../shared/fonts/PretendardVariable.woff2',
-  display: 'swap',
-  weight: '100 900',
-  variable: '--font-pretendard',
-});
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko" className={pretendard.variable} suppressHydrationWarning>
-      <body className="font-pretendard max-w-3xl mx-auto min-h-dvh flex flex-col bg-gray-100">
+    <html lang="ko">
+      <body className="max-w-3xl mx-auto min-h-dvh flex flex-col bg-gray-100 font-mono">
         <Providers>
           <Header />
           <main className="flex-1 flex flex-col py-6 px-4">{children}</main>
