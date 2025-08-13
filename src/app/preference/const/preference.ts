@@ -40,6 +40,10 @@ export const CONCERTS: Link[] = [
     link: 'https://tickets.interpark.com/goods/24010553',
   },
   {
+    title: "Noel Gallagher's High Flying Birds",
+    link: 'https://tickets.interpark.com/goods/24003561',
+  },
+  {
     title: "한로로 2nd EP 발매기념 단독콘서트 '집'",
     link: 'https://ticket.melon.com/performance/index.htm?prodId=209915',
   },
