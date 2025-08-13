@@ -24,6 +24,10 @@ export const PLAYLISTS: Link[] = [
     title: 'play with earth! 0.03 - wave to earth',
     link: 'https://open.spotify.com/album/527e8WrlMvJBEmlmt7kJCj',
   },
+  {
+    title: '나의 정원에서 - 윤지영',
+    link: 'https://open.spotify.com/album/5eptzTFZfkY4V2LtbnDE5d',
+  },
 ];
 
 export const CONCERTS: Link[] = [
@@ -70,6 +74,11 @@ export const INTERESTS: InterestItem[] = [
 
 export const BOOKS_BY_YEAR: Record<number, Book[]> = {
   2025: [
+    {
+      title: '결혼ㆍ여름',
+      author: '알베르 카뮈',
+      link: 'https://product.kyobobook.co.kr/detail/S000203197818',
+    },
     {
       title: '동물 농장',
       author: '조지 오웰',
