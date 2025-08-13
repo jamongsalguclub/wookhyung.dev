@@ -36,6 +36,10 @@ export const CONCERTS: Link[] = [
     link: 'https://tickets.interpark.com/goods/24015393',
   },
   {
+    title: 'THE VOLUNTEERS ASIA TOUR 2024 - SEOUL',
+    link: 'https://tickets.interpark.com/goods/24010553',
+  },
+  {
     title: "한로로 2nd EP 발매기념 단독콘서트 '집'",
     link: 'https://ticket.melon.com/performance/index.htm?prodId=209915',
   },
