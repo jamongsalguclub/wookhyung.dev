@@ -4,6 +4,7 @@ import {
   BOOKS_BY_YEAR,
   CONCERTS,
   INTERESTS,
+  MOVIES,
   PLAYLISTS,
 } from '@/app/preference/const/preference';
 import { siteConfig } from '@/shared/config/site';
@@ -99,9 +100,22 @@ export default function PreferencePage() {
 
       <section>
         <h2 className="text-xl font-bold text-gray-900 mb-4">Movie</h2>
-        <ul className="list-disc ml-6 space-y-2">
-          <li className="text-gray-700">...</li>
-        </ul>
+        {Object.entries(MOVIES)
+          .sort(([a], [b]) => Number(b) - Number(a))
+          .map(([year, movies]) => (
+            <div key={year} className="mb-6">
+              <h3 className="text-base font-semibold text-gray-900 mb-4">
+                {year}
+              </h3>
+              <ul className="list-disc ml-6 space-y-2">
+                {movies.map((movie) => (
+                  <li className="text-gray-700" key={movie.title}>
+                    {movie.title} ({movie.director})
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
       </section>
 
       <section>

@@ -238,3 +238,146 @@ export const BOOKS_BY_YEAR: Record<number, Book[]> = {
     },
   ],
 };
+
+export const MOVIES = {
+  2025: [
+    {
+      title: '...',
+      director: '...',
+    },
+  ],
+  2024: [
+    {
+      title: '중경삼림',
+      director: '왕가위',
+    },
+    {
+      title: '조커2',
+      director: '토드 필립스',
+    },
+    {
+      title: '와일드 로봇',
+      director: '크리스 샌더스',
+    },
+    {
+      title: '보통의 가족',
+      director: '허진호',
+    },
+    {
+      title: '혐오스런 마츠코의 일생',
+      director: '나카시마 테츠야',
+    },
+    {
+      title: '로봇 드림',
+      director: '파블로 베르헤르',
+    },
+    {
+      title: '모노노케 히메',
+      director: '미야자키 하야오',
+    },
+    {
+      title: '장손',
+      director: '오정민',
+    },
+    {
+      title: '소년 시절의 너',
+      director: '증국상',
+    },
+    {
+      title: '룩백',
+      director: '오시야마 키요타카',
+    },
+    {
+      title: '아메리칸 셰프',
+      director: '존 파브로',
+    },
+    {
+      title: '친절한 금자씨',
+      director: '박찬욱',
+    },
+    {
+      title: '조제, 호랑이 그리고 물고기들',
+      director: '이누도 잇신',
+    },
+    {
+      title: '에일리언: 로물루스',
+      director: '페데 알바레즈',
+    },
+    {
+      title: '파일럿',
+      director: '김한결',
+    },
+    {
+      title: '퍼펙트 데이즈',
+      director: '빔 벤더스',
+    },
+    {
+      title: '데드풀과 울버린',
+      director: '숀 리비',
+    },
+    {
+      title: '탈주',
+      director: '이종필',
+    },
+    {
+      title: '하이재킹',
+      director: '김성한',
+    },
+    {
+      title: '인사이드 아웃 2',
+      director: '켈시 맨',
+    },
+    {
+      title: '존 오브 인터레스트',
+      director: '조나단 글래이저',
+    },
+    {
+      title: '퓨리오사: 매드맥스 사가',
+      director: '조지 밀러',
+    },
+    {
+      title: '악마와의 토크쇼',
+      director: '캐머런 카이네스',
+    },
+    {
+      title: '리멤버',
+      director: '이일형',
+    },
+    {
+      title: '봄날은 간다',
+      director: '허진호',
+    },
+    {
+      title: '댓글부대',
+      director: '안국진',
+    },
+    {
+      title: '악은 존재하지 않는다',
+      director: '하마구치 류스케',
+    },
+    {
+      title: '범죄도시4',
+      director: '허명행',
+    },
+    {
+      title: '파묘',
+      director: '장재현',
+    },
+    {
+      title: '비긴 어게인',
+      director: '존 카니',
+    },
+    {
+      title: '듄: 파트2',
+      director: '드니 빌뇌브',
+    },
+    {
+      title: '조 블랙의 사랑',
+      director: '마틴 브레스트',
+    },
+    {
+      title: '괴물',
+      director: '고레에다 히로카즈',
+    },
+  ],
+} as const;
