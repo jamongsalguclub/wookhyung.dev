@@ -132,7 +132,7 @@ export default function AboutPage() {
         </section>
 
         <section>
-          <h2 className="text-xl font-bold text-gray-900 mb-4">Projects</h2>
+          <h2 className="text-xl font-bold text-gray-900 mb-4">Project</h2>
           <ul className="list-disc ml-6 space-y-2">
             {[
               {
