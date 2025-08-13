@@ -87,7 +87,7 @@ export const BOOKS_BY_YEAR: Record<number, Book[]> = {
     {
       title: '어떤 비밀',
       author: '최진영',
-      link: 'https://product.kyobobook.co.kr/detail/S000000620142',
+      link: 'https://product.kyobobook.co.kr/detail/S000214526764',
     },
     {
       title: '미키 7',
