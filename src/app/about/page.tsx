@@ -170,7 +170,7 @@ export default function AboutPage() {
           <h2 className="text-xl font-bold text-gray-900 mb-4">Education</h2>
           <ul className="list-disc ml-6 space-y-2">
             <li className="text-gray-700">
-              방송통신대학교 컴퓨터과학과 (25년 2학기 입학 예정)
+              방송통신대학교 컴퓨터과학과 (25.09 - 현재)
             </li>
             <li className="text-gray-700">
               엘리스 SW 엔지니어 트랙 (22.04 - 22.07)
