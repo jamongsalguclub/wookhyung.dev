@@ -11,7 +11,7 @@ export const siteConfig = {
   author: {
     name: 'wookhyung',
     url: 'https://www.wookhyung.dev',
-    email: 'qpflapffhs76@gmail.com',
+    email: 'hyungwookchoi.dev@gmail.com',
   },
   keywords: ['wookhyung', 'wookhyung.dev', 'blog', 'frontend', 'developer'],
   language: 'ko',
@@ -81,6 +81,6 @@ export const siteConfig = {
   },
   social: {
     github: 'https://github.com/jamongsalguclub',
-    email: 'qpflapffhs76@gmail.com',
+    email: 'hyungwookchoi.dev@gmail.com',
   },
 };
