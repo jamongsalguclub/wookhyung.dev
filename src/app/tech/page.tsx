@@ -46,8 +46,7 @@ export default function Page() {
                 href={`/tech/${post.slug}`}
                 className="py-3 px-2 hover:bg-gray-200 flex flex-col gap-2 transition-colors"
               >
-                <h2 className="text-lg font-bold">{post.title}</h2>
-                <p className="text-sm text-gray-500 mb-2">{post.summary}</p>
+                <h2 className="font-bold">{post.title}</h2>
                 <p className="text-xs text-gray-500">
                   {new Date(post.date).toLocaleDateString('ko-KR', {
                     year: 'numeric',
