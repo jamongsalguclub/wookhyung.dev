@@ -9,6 +9,10 @@ export const BOOK_STUDY_GROUPS: StudyGroup[] = [
     title: 'Personal',
     items: [
       {
+        title: '함께 자라기',
+        link: 'https://product.kyobobook.co.kr/detail/S000001033071',
+      },
+      {
         title: '소프트웨어 엔지니어 가이드북',
         link: 'https://product.kyobobook.co.kr/detail/S000214576874',
       },

@@ -242,8 +242,36 @@ export const BOOKS_BY_YEAR: Record<number, Book[]> = {
 export const MOVIES = {
   2025: [
     {
-      title: '...',
-      director: '...',
+      title: '명탐정 코난: 척안의 잔상',
+      director: '시게하라 카츠야',
+    },
+    {
+      title: '그을린 사랑',
+      director: '드니 빌뇌브',
+    },
+    {
+      title: '미션 임파서블: 파이널 레코닝',
+      director: '크리스토퍼 맥쿼리',
+    },
+    {
+      title: '콘클라베',
+      director: '에드워드 버거',
+    },
+    {
+      title: '미키 17',
+      director: '봉준호',
+    },
+    {
+      title: '말할 수 없는 비밀',
+      director: '서유민',
+    },
+    {
+      title: '러브레터',
+      director: '이와이 슌지',
+    },
+    {
+      title: '더 폴: 디렉터스 컷',
+      director: '타셈 싱',
     },
   ],
   2024: [
