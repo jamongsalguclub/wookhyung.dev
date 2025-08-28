@@ -268,7 +268,7 @@ export const Header = () => {
 
   return (
     <>
-      <header className="z-50 sticky top-0 bg-gray-100/80 px-4 py-3 backdrop-blur-md">
+      <header className="z-50 sticky top-0 bg-gray-100/50 px-4 py-3 backdrop-blur-md">
         <nav className="flex items-center justify-between">
           <Link
             href="/"
