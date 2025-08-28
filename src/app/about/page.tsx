@@ -201,6 +201,24 @@ export default function AboutPage() {
             </li>
           </ul>
         </section>
+
+        <section>
+          <h2 className="text-xl font-bold text-gray-900 mb-4">
+            What I&apos;m interested in recently...
+          </h2>
+          <ul className="list-disc ml-6 space-y-2">
+            <li className="text-gray-700">
+              <a
+                href="https://www.anthropic.com/claude-code"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:underline"
+              >
+                Claude Code
+              </a>
+            </li>
+          </ul>
+        </section>
       </div>
     </div>
   );
