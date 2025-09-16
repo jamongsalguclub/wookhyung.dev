@@ -1,10 +1,11 @@
-import { RssIcon } from 'lucide-react';
+import { GitMergeIcon, GitPullRequestIcon, RssIcon } from 'lucide-react';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 
 import { siteConfig } from '@/shared/config/site';
 import { EmailIcon } from '@/shared/icon/email-icon';
 import { GithubIcon } from '@/shared/icon/github-icon';
+import { cn } from '@/shared/lib/tailwind-merge';
 import { openGraph, twitter } from '@/shared/util/seo';
 
 export const metadata: Metadata = {
@@ -103,29 +104,63 @@ export default function AboutPage() {
               {
                 title: 'make head function scripts load properly',
                 link: 'https://github.com/TanStack/router/pull/4323',
+                status: 'merged',
               },
               {
                 title: 'support SSR for non-Latin character route paths',
                 link: 'https://github.com/TanStack/router/pull/4611',
+                status: 'merged',
               },
               {
                 title: 'properly merge middleware context objects',
                 link: 'https://github.com/TanStack/router/pull/4665',
+                status: 'merged',
               },
               {
                 title: 'reset statusCode to 200 on navigation start',
                 link: 'https://github.com/TanStack/router/pull/4664',
+                status: 'merged',
               },
-            ].map(({ title, link }) => (
+              {
+                title: 'implement AST-based export detection for routes',
+                link: 'https://github.com/TanStack/router/pull/4669',
+                status: 'open',
+              },
+              {
+                title:
+                  'prevent script tag duplication in SSR and client-side navigation',
+                link: 'https://github.com/TanStack/router/pull/5095',
+                status: 'open',
+              },
+            ].map(({ title, link, status }) => (
               <li key={title} className="text-gray-700">
-                <a
-                  href={link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 hover:underline"
-                >
-                  {title}
-                </a>
+                <div className="flex items-center gap-2">
+                  <div
+                    className={cn(
+                      'flex items-center gap-1 text-white rounded-full px-2 py-1 w-fit',
+                      {
+                        'bg-[#8256d0]': status === 'merged',
+                        'bg-[#347d39]': status === 'open',
+                      },
+                    )}
+                  >
+                    {status === 'merged' && (
+                      <GitMergeIcon className="w-4 h-4" />
+                    )}
+                    {status === 'open' && (
+                      <GitPullRequestIcon className="w-4 h-4" />
+                    )}
+                    <span className="text-xs text-white">{status}</span>
+                  </div>
+                  <a
+                    href={link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:underline line-clamp-1 break-all"
+                  >
+                    {title}
+                  </a>
+                </div>
               </li>
             ))}
           </ul>
