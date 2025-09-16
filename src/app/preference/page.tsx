@@ -5,7 +5,6 @@ import {
   CONCERTS,
   INTERESTS,
   MOVIES,
-  PLAYLISTS,
 } from '@/app/preference/const/preference';
 import { siteConfig } from '@/shared/config/site';
 import { PageTitle } from '@/shared/ui/page-title';
@@ -30,26 +29,7 @@ export default function PreferencePage() {
       <PageTitle title="Preference" />
 
       <section>
-        <div className="mb-6">
-          <h2 className="text-xl font-bold text-gray-900 mb-4">Music</h2>
-          <h3 className="text-base font-semibold text-gray-900 mb-4">
-            Playlist
-          </h3>
-          <ul className="list-disc ml-6 space-y-2">
-            {PLAYLISTS.map((playlist) => (
-              <li className="text-gray-700" key={playlist.title}>
-                <a
-                  href={playlist.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 hover:underline inline-flex items-center gap-1"
-                >
-                  {playlist.title}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <h2 className="text-xl font-bold text-gray-900 mb-4">Music</h2>
         <div className="mb-6">
           <h3 className="text-base font-semibold text-gray-900 mb-4">
             Concert

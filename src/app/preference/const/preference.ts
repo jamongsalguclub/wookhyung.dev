@@ -15,21 +15,6 @@ export interface Book {
   link: string;
 }
 
-export const PLAYLISTS: Link[] = [
-  {
-    title: '자몽살구클럽 - 한로로',
-    link: 'https://open.spotify.com/album/2DV7iVJ7L5DRQijgjyqLyQ',
-  },
-  {
-    title: 'play with earth! 0.03 - wave to earth',
-    link: 'https://open.spotify.com/album/527e8WrlMvJBEmlmt7kJCj',
-  },
-  {
-    title: '나의 정원에서 - 윤지영',
-    link: 'https://open.spotify.com/album/5eptzTFZfkY4V2LtbnDE5d',
-  },
-];
-
 export const CONCERTS: Link[] = [
   {
     title: '2024 Wave to Earth 단독공연 [play with earth! Seoul]',
