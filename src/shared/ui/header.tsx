@@ -29,7 +29,6 @@ const navigation: NavigationItem[] = [
       { name: 'Tech', href: '/tech' },
       { name: 'Study', href: '/study' },
       { name: 'Feed', href: '/feed' },
-      { name: 'Bookmark', href: '/bookmark' },
     ],
   },
   {
