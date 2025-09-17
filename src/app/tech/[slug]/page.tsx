@@ -81,9 +81,6 @@ export default async function Page({ params }: Props) {
         <BackButton className="self-start" />
         <article className="py-6 prose max-w-none break-words">
           <h1>{post.title}</h1>
-          {post.summary && (
-            <p className="text-xl mt-0 text-slate-700">{post.summary}</p>
-          )}
           <div className="flex items-center gap-2 mt-2 mb-4 not-prose">
             <time
               dateTime={post.date}
