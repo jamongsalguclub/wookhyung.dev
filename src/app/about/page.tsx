@@ -122,15 +122,10 @@ export default function AboutPage() {
                 status: 'merged',
               },
               {
-                title: 'implement AST-based export detection for routes',
-                link: 'https://github.com/TanStack/router/pull/4669',
-                status: 'open',
-              },
-              {
                 title:
                   'prevent script tag duplication in SSR and client-side navigation',
                 link: 'https://github.com/TanStack/router/pull/5095',
-                status: 'open',
+                status: 'merged',
               },
             ].map(({ title, link, status }) => (
               <li key={title} className="text-gray-700">
