@@ -202,9 +202,6 @@ export default function AboutPage() {
             <li className="text-gray-700">
               방송통신대학교 컴퓨터과학과 (25.09 - 현재)
             </li>
-            <li className="text-gray-700">
-              엘리스 SW 엔지니어 트랙 (22.04 - 22.07)
-            </li>
           </ul>
         </section>
 
